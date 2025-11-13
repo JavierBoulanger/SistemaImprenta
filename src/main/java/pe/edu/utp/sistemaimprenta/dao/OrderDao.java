@@ -65,6 +65,46 @@ public class OrderDao implements CrudDao<Order> {
         }
     }
 
+   
+    public List<OrderDetail> findDetailsByOrderId(int orderId) {
+        List<OrderDetail> detalles = new ArrayList<>();
+        String sql = """
+            SELECT d.id_detalle_pedido, d.cantidad, d.precioUnitario, d.subtotal,
+                   p.id_producto, p.nombre AS producto, p.precio_unitario
+            FROM DetallePedido d
+            INNER JOIN Producto p ON d.id_producto = p.id_producto
+            WHERE d.id_pedido = ?
+        """;
+
+        Connection conn = DBConnection.getInstance().getConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, orderId);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Product producto = new Product();
+                producto.setId(rs.getInt("id_producto"));
+                producto.setName(rs.getString("producto"));
+                producto.setBasePrice(rs.getDouble("precio_unitario"));
+
+                OrderDetail detalle = new OrderDetail();
+                detalle.setId(rs.getInt("id_detalle_pedido"));
+                detalle.setProduct(producto);
+                detalle.setQuantity(rs.getInt("cantidad"));
+                detalle.setUnitPrice(rs.getDouble("precioUnitario"));
+                detalle.setSubtotal(rs.getDouble("subtotal"));
+
+                detalles.add(detalle);
+            }
+
+        } catch (SQLException e) {
+            log.error("Error al obtener detalles del pedido " + orderId, e);
+        }
+
+        return detalles;
+    }
+
     @Override
     public List<Order> findAll() {
         String sql = """
@@ -103,6 +143,8 @@ public class OrderDao implements CrudDao<Order> {
                 o.setDeliveryDate(rs.getTimestamp("fechaEntrega").toLocalDateTime());
                 o.setTotalAmount(rs.getDouble("montoTotal"));
 
+                o.setDetails(findDetailsByOrderId(o.getId()));
+
                 lista.add(o);
             }
 
@@ -122,13 +164,6 @@ public class OrderDao implements CrudDao<Order> {
             INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
             INNER JOIN Usuario u ON p.id_usuario = u.id_usuario
             WHERE p.id_pedido = ?
-        """;
-
-        String sqlDetalles = """
-            SELECT d.*, pr.id_producto, pr.nombre AS producto
-            FROM DetallePedido d
-            INNER JOIN Producto pr ON d.id_producto = pr.id_producto
-            WHERE d.id_pedido = ?
         """;
 
         Connection conn = DBConnection.getInstance().getConnection();
@@ -157,26 +192,9 @@ public class OrderDao implements CrudDao<Order> {
             o.setDeliveryDate(rs.getTimestamp("fechaEntrega").toLocalDateTime());
             o.setTotalAmount(rs.getDouble("montoTotal"));
 
-            List<OrderDetail> detalles = new ArrayList<>();
-            PreparedStatement psDetalles = conn.prepareStatement(sqlDetalles);
-            psDetalles.setInt(1, id);
-            ResultSet rsD = psDetalles.executeQuery();
+            // 🔹 Cargar detalles también aquí
+            o.setDetails(findDetailsByOrderId(id));
 
-            while (rsD.next()) {
-                Product p = new Product();
-                p.setId(rsD.getInt("id_producto"));
-                p.setName(rsD.getString("producto"));
-
-                OrderDetail d = new OrderDetail();
-                d.setId(rsD.getInt("id_detalle_pedido"));
-                d.setProduct(p);
-                d.setQuantity(rsD.getInt("cantidad"));
-                d.setUnitPrice(rsD.getDouble("precioUnitario"));
-                d.setSubtotal(rsD.getDouble("subtotal"));
-                detalles.add(d);
-            }
-
-            o.setDetails(detalles);
             return o;
 
         } catch (SQLException e) {

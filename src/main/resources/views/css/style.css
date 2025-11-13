@@ -3,6 +3,14 @@
     -fx-background-color: linear-gradient(to bottom, #0f172a, #1e293b); /* azul oscuro */
 }
 
+.transparent-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-effect: none;
+}
+
 .menu-button {
     -fx-background-color: #1e293b;
     -fx-text-fill: #cbd5e1; 

@@ -1,0 +1,71 @@
+[10-11-2025 22:28:07] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:28:07] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:28:07] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/PaymentPaneDashboard.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/PaymentPaneDashboard.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2662)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:93)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:126)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.reflect.InvocationTargetException: null
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:109)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.sun.javafx.reflect.Trampoline.invoke(MethodUtil.java:65)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at javafx.base@24/com.sun.javafx.reflect.MethodUtil.invoke(MethodUtil.java:112)
+	at javafx.fxml@24/com.sun.javafx.fxml.MethodHelper.invoke(MethodHelper.java:78)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2658)
+	... 30 common frames omitted
+Caused by: java.lang.ClassCastException: class javafx.scene.layout.HBox cannot be cast to class javafx.scene.layout.AnchorPane (javafx.scene.layout.HBox and javafx.scene.layout.AnchorPane are in module javafx.graphics@24 of loader 'app')
+	at pe.edu.utp.sistemaimprenta.controller.PaymentController.cargarPagos(PaymentController.java:74)
+	at pe.edu.utp.sistemaimprenta.controller.PaymentController.initialize(PaymentController.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	... 37 common frames omitted
+[10-11-2025 22:33:14] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:33:14] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:33:33] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 2 pagos con estado PAGADO
+[10-11-2025 22:33:39] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 1 pagos con estado PENDIENTE
+[10-11-2025 22:33:58] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:33:58] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:34:01] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:34:01] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:34:25] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 2 pagos con estado PAGADO
+[10-11-2025 22:34:30] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 1 pagos con estado PENDIENTE
+[10-11-2025 22:34:36] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 2 pagos con estado PAGADO
+[10-11-2025 22:34:58] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 2 pagos con estado PAGADO
+[10-11-2025 22:35:02] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:35:02] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:35:06] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:35:06] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)
+[10-11-2025 22:35:14] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos simulados...
+[10-11-2025 22:35:14] [INFO] [p.e.u.s.controller.PaymentController] Datos simulados cargados correctamente (4 pagos)

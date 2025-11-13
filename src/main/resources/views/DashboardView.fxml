@@ -29,10 +29,7 @@
                 <HBox prefHeight="46.0" prefWidth="938.0" HBox.hgrow="ALWAYS">
                <children>
                   <VBox prefHeight="53.0" prefWidth="54.0" />
-                  <ImageView fx:id="imgLogo" fitHeight="46.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/logo.png" />
-                     </image></ImageView>
+                  <ImageView fx:id="imgLogo" fitHeight="46.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
                   <VBox prefHeight="53.0" prefWidth="86.0">
                      <children>
                         <Label fx:id="labelUsername1" maxWidth="666.0" prefHeight="43.0" prefWidth="260.0" styleClass="company-name" text="IMPRENTA" wrapText="true" />
@@ -55,7 +52,7 @@
                      <image>
                         <Image url="@../images/DefaultProfileUser.png" />
                      </image></ImageView>
-                        <MenuButton fx:id="menuButton" mnemonicParsing="false">
+                        <MenuButton fx:id="menuButton" mnemonicParsing="false" styleClass="transparent-combo-box">
                             <items>
                                 <MenuItem fx:id="itemLogOut" mnemonicParsing="false">
                                     <graphic>

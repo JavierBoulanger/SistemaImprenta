@@ -26,6 +26,12 @@
     -fx-font-weight: bold;
 }
 
+.label.title2 {
+    -fx-text-fill: #2f2f2f; 
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
 .text-field, .text-area {
     -fx-background-color: #ffffff;
     -fx-border-color: #dcdde1;
@@ -142,7 +148,7 @@
 */
 
 .panel2 {
-    -fx-background-color: #4682B4;  /* Azul marino */
+    -fx-background-color: #4682B4;  
     -fx-padding: 20;
     -fx-background-radius: 10;
 }
@@ -195,4 +201,162 @@
     -fx-border-color: #ccc;
     -fx-border-radius: 12;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.2, 0, 4);
+}
+
+
+
+
+.pagos-root {
+    -fx-background-color: #f6f9fc;
+    -fx-padding: 25;
+    -fx-font-family: "Segoe UI";
+}
+
+.pagos-header {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.pagos-header-icon {
+    -fx-font-size: 28px;
+}
+
+.pagos-header-subtitle {
+    -fx-text-fill: #5f6368;
+    -fx-font-size: 14px;
+}
+
+.card-resumen {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-padding: 15 20;
+    -fx-pref-width: 280;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+.card-verde {
+    -fx-background-color: linear-gradient(to bottom, #e9fbe9, #dcf8dc);
+}
+
+.card-amarillo {
+    -fx-background-color: linear-gradient(to bottom, #fff8e1, #fff3cd);
+}
+
+.card-azul {
+    -fx-background-color: linear-gradient(to bottom, #e3f2fd, #e8f0fe);
+}
+
+.card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.card-monto {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 0;
+}
+
+.card-verde .card-monto {
+    -fx-text-fill: #27ae60;
+}
+.card-amarillo .card-monto {
+    -fx-text-fill: #f39c12;
+}
+.card-azul .card-monto {
+    -fx-text-fill: #2980b9;
+}
+
+.filtro-bar {
+    -fx-spacing: 10;
+    -fx-padding: 10 0 10 0;
+}
+
+.filtro-btn {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+}
+
+.filtro-btn:hover {
+    -fx-background-color: #eaf1fb;
+    -fx-border-color: #b0c4de;
+}
+
+.lista-pagos {
+    -fx-padding: 10;
+    -fx-spacing: 12;
+}
+
+.pago-item {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-padding: 12 18;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 5, 0, 0, 2);
+}
+
+.pago-item:hover {
+    -fx-background-color: #f9fafb;
+}
+
+.pago-icon {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-background-radius: 50%;
+    -fx-alignment: center;
+}
+
+.pago-info-titulo {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+}
+.pago-info-detalle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #666;
+}
+
+.pago-monto {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.estado-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+}
+
+.estado-completado {
+    -fx-background-color: #27ae60;
+}
+
+.estado-pendiente {
+    -fx-background-color: #f39c12;
+}
+
+.estado-anulado {
+    -fx-background-color: #e74c3c;
+}
+
+.estado-desconocido {
+    -fx-background-color: #95a5a6;
+}
+
+.estado-parcial {
+    -fx-background-color: #3498db; 
 }

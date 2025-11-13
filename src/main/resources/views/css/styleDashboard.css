@@ -18,7 +18,15 @@
     -fx-alignment: center-left;     
 }
 
-
+.transparent-combo-box {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-effect: none;
+    -fx-cursor: hand;
+}
 
 .sidebar-header Label {
     -fx-text-fill: #f1f5f9;

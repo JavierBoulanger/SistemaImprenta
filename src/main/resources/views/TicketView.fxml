@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="10" stylesheets="@css/styleTicket.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.TicketController">
+
+    <VBox alignment="CENTER" spacing="2" styleClass="header">
+        <Text fx:id="lblNombreEmpresa" styleClass="empresa-nombre" text="Nombre Empresa" />
+        <Text fx:id="lblRuc" styleClass="empresa-ruc" text="RUC: 00000000000" />
+        <Text fx:id="lblDireccion" styleClass="empresa-direccion" text="Dirección de la empresa" />
+        <Separator styleClass="separator" />
+    </VBox>
+
+    <GridPane hgap="10" styleClass="grid-info" vgap="5">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" />
+            <ColumnConstraints halignment="LEFT" />
+        </columnConstraints>
+        <Label text="Cliente:" />
+        <Label fx:id="lblCliente" />
+        <Label text="Fecha:" GridPane.rowIndex="1" />
+        <Label fx:id="lblFecha" GridPane.rowIndex="1" />
+        <Label text="Vendedor:" GridPane.rowIndex="2" />
+        <Label fx:id="lblVendedor" GridPane.rowIndex="2" />
+        <Label text="N° Pedido:" GridPane.rowIndex="3" />
+        <Label fx:id="lblIdPedido" GridPane.rowIndex="3" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <TableView fx:id="tablaDetalles" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="colProducto" prefWidth="200" text="Producto" />
+            <TableColumn fx:id="colCantidad" prefWidth="100" text="Cantidad" />
+            <TableColumn fx:id="colPrecio" prefWidth="100" text="Precio" />
+            <TableColumn fx:id="colSubtotal" prefWidth="100" text="Subtotal" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10" styleClass="total-box">
+        <Label text="Total:" />
+        <Label fx:id="lblTotal" />
+    </HBox>
+
+    <Button fx:id="btnDescargar" text="Descargar PDF" />
+</VBox>

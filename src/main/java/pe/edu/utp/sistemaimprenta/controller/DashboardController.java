@@ -18,6 +18,7 @@ import pe.edu.utp.sistemaimprenta.model.AuditType;
 import pe.edu.utp.sistemaimprenta.model.User;
 import pe.edu.utp.sistemaimprenta.model.UserType;
 import pe.edu.utp.sistemaimprenta.util.AuditUtil;
+import pe.edu.utp.sistemaimprenta.util.ConfigUtil;
 import pe.edu.utp.sistemaimprenta.util.FxmlPath;
 import pe.edu.utp.sistemaimprenta.util.UserAware;
 import pe.edu.utp.sistemaimprenta.util.ViewLoader;
@@ -41,9 +42,6 @@ public class DashboardController implements Initializable {
     private Pane mainPanel;
 
     @FXML
-    private MenuButton menuButton;
-
-    @FXML
     private MenuItem itemLogOut;
 
     @FXML
@@ -57,7 +55,7 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setImage(imgLogo, "/images/logo.png");
+        setImage(imgLogo, ConfigUtil.get("img.logo"));
         setImage(imgUser, "/images/DefaultProfileUser.png");
         itemLogOut.setOnAction(this::logOut);
     }
@@ -77,12 +75,13 @@ public class DashboardController implements Initializable {
     }
 
     private void crearItemsAdministrador() {
-        createSidebarItem("Clientes", "/images/icons/c.png", FxmlPath.CUSTOMER_PANE.getPath());
-        createSidebarItem("Personal", "/images/icons/customers2.png", FxmlPath.USER_PANE.getPath());
-        createSidebarItem("Auditoria", "/images/icons/audit.png", FxmlPath.AUDIT_PANE.getPath());
-        createSidebarItem("Productos", "/images/icons/product.png", FxmlPath.PRODUCT_PANE.getPath());
-        createSidebarItem("Pedidos", "/images/icons/order.png", FxmlPath.ORDER_PANE.getPath());
-        createSidebarItem("Configuracion", "", "/views/Peliculas.fxml");
+        createSidebarItem("Clientes", ConfigUtil.get("img.customers"), FxmlPath.CUSTOMER_PANE.getPath());
+        createSidebarItem("Personal", ConfigUtil.get("img.users"), FxmlPath.USER_PANE.getPath());
+        createSidebarItem("Auditoria", ConfigUtil.get("img.audit"), FxmlPath.AUDIT_PANE.getPath());
+        createSidebarItem("Productos", ConfigUtil.get("img.products"), FxmlPath.PRODUCT_PANE.getPath());
+        createSidebarItem("Pedidos", ConfigUtil.get("img.orders"), FxmlPath.ORDER_PANE.getPath());
+        createSidebarItem("Configuracion", ConfigUtil.get("img.configuration"), FxmlPath.CONFIG_PANE.getPath());
+        createSidebarItem("Pagos", ConfigUtil.get("img.configuration"), FxmlPath.PAYMENT_PANE.getPath());
     }
 
     private void setImage(ImageView imageView, String resourcePath) {

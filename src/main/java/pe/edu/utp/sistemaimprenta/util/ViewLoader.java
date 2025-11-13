@@ -33,7 +33,7 @@ public class ViewLoader {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
-            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/logo.png")));
+            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/icons/dashboard/logo.png")));
             stage.setResizable(resizable);
             stage.show();
         } catch (IOException e) {
@@ -58,7 +58,7 @@ public class ViewLoader {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
-            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/logo.png")));
+            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/icons/dashboard/logo.png")));
             stage.setResizable(resizable);
             stage.show();
             return loader.getController();

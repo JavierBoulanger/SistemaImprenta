@@ -61,7 +61,6 @@ public class LoginController implements Initializable {
             closeCurrentStage();
         */
         
-        
         if (userDao.validateLogin(u, p)) {
             User user = userDao.getUser();
             Message.showMessage(lblError,"Inicio de sesión exitoso", "green");
@@ -72,6 +71,7 @@ public class LoginController implements Initializable {
             Message.showMessage(lblError, "Credenciales incorrectas", "red");
             Notification.showNotification("Login", "ERROR!", 4, NotificationType.ERROR);
         }
+        
         
     }
     

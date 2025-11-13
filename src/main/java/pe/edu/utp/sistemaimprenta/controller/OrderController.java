@@ -1,5 +1,6 @@
 package pe.edu.utp.sistemaimprenta.controller;
 
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,8 +14,13 @@ import pe.edu.utp.sistemaimprenta.util.*;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class OrderController implements Initializable, UserAware {
 
@@ -34,13 +40,10 @@ public class OrderController implements Initializable, UserAware {
     private Button btnCancelarPedido;
 
     @FXML
-    private Button btnCsv;
+    private Button btnVerBoleta;
 
     @FXML
     private Button btnEliminar;
-
-    @FXML
-    private Button btnExcel;
 
     @FXML
     private Button btnGuardarPedido;
@@ -94,6 +97,7 @@ public class OrderController implements Initializable, UserAware {
     private TableColumn<Order, String> colCliente;
     @FXML
     private TableColumn<Order, String> colEstado;
+
     @FXML
     private TableColumn<Order, String> colFechaEntrega;
     @FXML
@@ -108,6 +112,9 @@ public class OrderController implements Initializable, UserAware {
     private TableColumn<OrderDetail, Double> colPrecioDetalle;
     @FXML
     private TableColumn<OrderDetail, Double> colSubtotalDetalle;
+
+    @FXML
+    private TableColumn<Order, String> colEstadoPago;
 
     private ObservableList<Order> listaPedidos;
     private final ObservableList<OrderDetail> detalles = FXCollections.observableArrayList();
@@ -126,6 +133,7 @@ public class OrderController implements Initializable, UserAware {
         configurarBotones();
         refrescarTabla();
         paneNuevoPedido.setVisible(false);
+        panePago.setVisible(false);
     }
 
     @Override
@@ -143,6 +151,22 @@ public class OrderController implements Initializable, UserAware {
         colFechaRegistro.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(
                 data.getValue().getCreatedAt() != null ? data.getValue().getCreatedAt().toLocalDate().toString() : ""));
         colTotal.setCellValueFactory(data -> new javafx.beans.property.SimpleDoubleProperty(data.getValue().getTotalAmount()).asObject());
+        colEstadoPago.setCellValueFactory(data -> {
+            Order pedido = data.getValue();
+            double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedido.getId());
+            double totalPedido = pedido.getTotalAmount();
+
+            String estado;
+            if (totalPagado <= 0) {
+                estado = "Pendiente";
+            } else if (totalPagado < totalPedido) {
+                estado = "Parcial";
+            } else {
+                estado = "Pagado";
+            }
+
+            return new javafx.beans.property.SimpleStringProperty(estado);
+        });
     }
 
     private void configurarDetalle() {
@@ -160,9 +184,11 @@ public class OrderController implements Initializable, UserAware {
         cmbCliente.setItems(FXCollections.observableArrayList(customerDao.findAll()));
         cmbProducto.setItems(FXCollections.observableArrayList(productDao.findAll()));
         cmbEstado.setItems(FXCollections.observableArrayList(OrderState.values()));
+        cmbMetodoPago.setItems(FXCollections.observableArrayList(PaymentMethod.values()));
     }
 
     private void configurarBotones() {
+        btnVerBoleta.setOnAction(e -> mostrarBoleta());
         btnBuscar.setOnMouseClicked(e -> buscarPedido());
         btnActualizar.setOnAction(e -> refrescarTabla());
         btnAgregar.setOnAction(e -> paneNuevoPedido.setVisible(true));
@@ -171,8 +197,18 @@ public class OrderController implements Initializable, UserAware {
         btnCancelarPedido.setOnAction(e -> paneNuevoPedido.setVisible(false));
         btnAgregarDetalle.setOnAction(e -> agregarDetalle());
         btnQuitarDetalle.setOnAction(e -> quitarDetalle());
-    }
+        btnGuardarPago.setOnAction(e -> registrarPago());
+        btnCancelarPago.setOnAction(e -> cancelarPago());
 
+        btnRegistrarPago.setOnAction(e -> {
+            pedidoSeleccionado = tablaDatos.getSelectionModel().getSelectedItem();
+            if (pedidoSeleccionado != null) {
+                cargarDatosPedido(pedidoSeleccionado);
+            } else {
+                Message.showMessage(lblErrorPedido, "Seleccione un pedido antes de registrar un pago", "red");
+            }
+        });
+    }
 
     private void agregarDetalle() {
         Product p = cmbProducto.getValue();
@@ -294,5 +330,183 @@ public class OrderController implements Initializable, UserAware {
                     return false;
             }
         }).toList());
+    }
+
+    private void mostrarBoleta() {
+        Order seleccionado = tablaDatos.getSelectionModel().getSelectedItem();
+
+        if (seleccionado == null) {
+            Message.showMessage(lblErrorPedido, "Seleccione un pedido para ver la boleta", "red");
+            return;
+        }
+
+        double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(seleccionado.getId());
+        double totalPedido = seleccionado.getTotalAmount();
+
+        if (totalPagado < totalPedido) {
+            double pendiente = totalPedido - totalPagado;
+            Message.showMessage(lblErrorPedido,
+                    String.format("No puede generar la boleta. Aún hay un saldo pendiente de S/ %.2f", pendiente),
+                    "red");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/TicketView.fxml"));
+            Parent root = loader.load();
+
+            TicketController controller = loader.getController();
+            controller.cargarDatos(seleccionado);
+
+            Stage stage = new Stage();
+            stage.setTitle("Boleta - Pedido N° " + seleccionado.getId());
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Message.showMessage(lblErrorPedido, "Error al mostrar boleta", "red");
+        }
+    }
+
+    @FXML
+    private Pane panePago;
+    @FXML
+    private Label lblSaldoPendiente;
+    @FXML
+    private Label lblTotalPagado;
+    @FXML
+    private Label lblTotalPedidoPago;
+    @FXML
+    private Label lblClientePago;
+    @FXML
+    private ComboBox<PaymentMethod> cmbMetodoPago;
+    @FXML
+    private TextField txtMontoPago;
+    @FXML
+    private Label lblErrorPago;
+    @FXML
+    private Button btnGuardarPago;
+    @FXML
+    private Button btnCancelarPago;
+
+    @FXML
+    private Button btnRegistrarPago;
+
+    private final PaymentDao paymentDAO = new PaymentDao();
+    private Order pedidoSeleccionado;
+    private double montoPendiente;
+
+    public void cargarDatosPedido(Order pedido) {
+        this.pedidoSeleccionado = pedido;
+
+        if (pedido == null) {
+            return;
+        }
+
+        double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedido.getId());
+        double totalPedido = pedido.getTotalAmount();
+        montoPendiente = Math.max(0, totalPedido - totalPagado);
+
+        lblClientePago.setText(pedido.getCustomer().getLastName() + " " + pedido.getCustomer().getName());
+        lblTotalPedidoPago.setText(String.format("S/ %.2f", totalPedido));
+        lblTotalPagado.setText(String.format("S/ %.2f", totalPagado));
+        lblSaldoPendiente.setText(String.format("S/ %.2f", montoPendiente));
+
+        txtMontoPago.clear();
+        cmbMetodoPago.getSelectionModel().clearSelection();
+
+        panePago.setVisible(true);
+    }
+
+    private boolean validarPago() {
+        String montoTexto = txtMontoPago.getText().trim();
+        PaymentMethod metodo = cmbMetodoPago.getValue();
+
+        if (montoTexto.isEmpty()) {
+            Message.showMessage(lblErrorPago, "Ingrese el monto del pago.", "red");
+            return false;
+        }
+
+        double monto;
+        try {
+            monto = Double.parseDouble(montoTexto);
+        } catch (NumberFormatException e) {
+            Message.showMessage(lblErrorPago, "Monto inválido. Use solo números.", "red");
+            return false;
+        }
+
+        if (monto <= 0) {
+            Message.showMessage(lblErrorPago, "El monto debe ser mayor a cero", "red");
+            return false;
+        }
+
+        if (monto > montoPendiente) {
+            Message.showMessage(lblErrorPago, "El monto no puede ser mayor al saldo pendiente", "red");
+            return false;
+        }
+
+        if (metodo == null) {
+            Message.showMessage(lblErrorPago, "Seleccione un método de pago", "red");
+            return false;
+        }
+
+        if (montoPendiente <= 0) {
+            Message.showMessage(lblErrorPago, "El pedido ya está completamente pagado.", "red");
+            return false;
+        }
+
+        return true;
+    }
+
+    private void registrarPago() {
+        if (!validarPago()) {
+            return;
+        }
+
+        double monto = Double.parseDouble(txtMontoPago.getText().trim());
+        PaymentMethod metodo = cmbMetodoPago.getValue();
+
+        Payment nuevoPago = new Payment();
+        nuevoPago.setOrder(pedidoSeleccionado);
+        nuevoPago.setMetodoPago(metodo);
+        nuevoPago.setMonto(monto);
+        nuevoPago.setFechaPago(LocalDateTime.now());
+
+        boolean exito = paymentDAO.registrarPago(nuevoPago);
+
+        if (exito) {
+            Message.showMessage(lblErrorPago, "Pago registrado correctamente.", "green");
+            actualizarMontos();
+        } else {
+            Message.showMessage(lblErrorPago, "Error al registrar el pago", "red");
+        }
+    }
+
+    private void actualizarMontos() {
+        double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedidoSeleccionado.getId());
+        double totalPedido = pedidoSeleccionado.getTotalAmount();
+        montoPendiente = Math.max(0, totalPedido - totalPagado);
+
+        lblTotalPagado.setText(String.format("S/ %.2f", totalPagado));
+        lblSaldoPendiente.setText(String.format("S/ %.2f", montoPendiente));
+
+        txtMontoPago.clear();
+        cmbMetodoPago.getSelectionModel().clearSelection();
+
+        if (montoPendiente <= 0) {
+            Message.showMessage(lblErrorPago, "El pedido ha sido pagado completamente", "green");
+            panePago.setVisible(false);
+        }
+    }
+
+    private void cancelarPago() {
+        limpiarFormulario();
+        panePago.setVisible(false);
+    }
+
+    private void limpiarFormulario() {
+        txtMontoPago.clear();
+        cmbMetodoPago.getSelectionModel().clearSelection();
     }
 }

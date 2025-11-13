@@ -258,7 +258,6 @@ public class ProductController implements Initializable, UserAware {
     }
 
     private void exportarCsv(ActionEvent e) {
-        System.out.println("adsad");
         String[] headers = {"ID", "Nombre", "Descripción", "Tipo", "Precio", "Estado"};
         Export.exportToCsv(
                 tablaProductos.getScene().getWindow(),

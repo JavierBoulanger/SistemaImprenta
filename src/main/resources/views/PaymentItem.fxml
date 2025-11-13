@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="root" alignment="CENTER_LEFT" spacing="10" styleClass="pago-item" stylesheets="@css/styleTest.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.PaymentItemController">
+
+    <StackPane fx:id="iconContainer" prefHeight="40" prefWidth="40" styleClass="pago-icon">
+        <ImageView fx:id="iconView" fitHeight="20" fitWidth="20" preserveRatio="true" />
+    </StackPane>
+
+    <VBox alignment="CENTER_LEFT" spacing="3">
+        <Label fx:id="lblTitulo" styleClass="pago-info-titulo" text="Pago de Juan Pérez - PED-001" />
+        <Label fx:id="lblDetalle" styleClass="pago-info-detalle" text="Tarjetas de presentación • 02/10/2025" />
+    </VBox>
+
+    <Region HBox.hgrow="ALWAYS" />
+
+    <VBox alignment="CENTER_RIGHT" spacing="3">
+        <Label fx:id="lblMonto" styleClass="pago-monto" text="S/ 450.00" />
+        <Label fx:id="lblEstado" styleClass="estado-label" text="Completado" />
+    </VBox>
+</HBox>

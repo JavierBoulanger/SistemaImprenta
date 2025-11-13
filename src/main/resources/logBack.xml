@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <!-- ========== APPENDER PARA CONSOLA ========== -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
         <encoder>
             <pattern>[%d{HH:mm:ss}] [%level] [%logger{36}] %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- ========== APPENDER PARA ARCHIVO ========== -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>log.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Crea un nuevo archivo cada día -->
             <fileNamePattern>logs/log-%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>7</maxHistory> <!-- guarda 7 días -->
+            <maxHistory>7</maxHistory> 
         </rollingPolicy>
         <encoder>
             <pattern>[%d{dd-MM-yyyy HH:mm:ss}] [%level] [%logger{36}] %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- ========== CONFIGURACIÓN GLOBAL ========== -->
     <root level="INFO">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />

@@ -62,7 +62,7 @@ public class RegisterController implements Initializable {
             return;
         }
 
-        UserType defaultType = UserType.ADMINISTRADOR;
+        UserType defaultType = UserType.VENDEDOR;
         
         if (userDao.existsUser(username)) {
             Message.showMessage(lblError, "Nombre de usuario en uso", "red");

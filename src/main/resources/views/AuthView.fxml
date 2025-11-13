@@ -3,10 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="backgroundPanel" prefHeight="390.0" prefWidth="330.0" styleClass="background" stylesheets="@../views/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.AuthController" >
+<AnchorPane fx:id="backgroundPanel" prefHeight="390.0" prefWidth="330.0" styleClass="background" stylesheets="@../views/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.AuthController">
 
     <children>
-        <AnchorPane fx:id="mainPanel" layoutX="25.0" layoutY="105.0" prefHeight="270.0" prefWidth="280.0" />
+        <AnchorPane fx:id="mainPanel" layoutX="25.0" layoutY="105.0" prefHeight="270.0" prefWidth="280.0" styleClass="transparent-pane" />
 
         <Button fx:id="btnLogin" alignment="CENTER" layoutX="25.0" layoutY="55.0" prefHeight="30.0" prefWidth="134.0" styleClass="menu-button" text="LOGIN" />
 

@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="backgroundPanel" prefHeight="290.0" prefWidth="280.0" styleClass="background" stylesheets="@../views/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.LoginController">
+<AnchorPane fx:id="backgroundPanel" prefHeight="290.0" prefWidth="280.0" styleClass="transparent-pane" stylesheets="@../views/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.LoginController">
 
     <children>
 
