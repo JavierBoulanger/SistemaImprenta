@@ -1,32 +1,20 @@
-[06-11-2025 14:09:49] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:09:55] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
-[06-11-2025 14:12:57] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
-[06-11-2025 14:13:30] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:13:30] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
-[06-11-2025 14:19:49] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:19:50] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
-[06-11-2025 14:25:22] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:25:22] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
-[06-11-2025 14:25:41] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al obtener detalles del pedido 2
-com.microsoft.sqlserver.jdbc.SQLServerException: Invalid column name 'precioBase'.
-	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
-	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
-	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findDetailsByOrderId(OrderDao.java:83)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:147)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:272)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:129)
-	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+[20-11-2025 11:16:31] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[20-11-2025 11:16:32] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[20-11-2025 11:16:34] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/ReportPane.fxml"
+javafx.fxml.LoadException: fx:controller can only be applied to root element.
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/ReportPane.fxml:86
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2688)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:909)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
-	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:93)
-	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:128)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
 	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
@@ -53,26 +41,28 @@ com.microsoft.sqlserver.jdbc.SQLServerException: Invalid column name 'precioBase
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-[06-11-2025 14:25:41] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al obtener detalles del pedido 4
-com.microsoft.sqlserver.jdbc.SQLServerException: Invalid column name 'precioBase'.
-	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
-	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
-	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
-	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
-	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findDetailsByOrderId(OrderDao.java:83)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:147)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:272)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:129)
-	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+[20-11-2025 11:16:40] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[20-11-2025 11:16:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[20-11-2025 11:16:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[20-11-2025 11:16:40] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[20-11-2025 11:16:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[20-11-2025 11:16:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[20-11-2025 11:16:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[20-11-2025 11:16:42] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/ReportPane.fxml"
+javafx.fxml.LoadException: fx:controller can only be applied to root element.
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/ReportPane.fxml:86
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2688)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:909)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
-	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:93)
-	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:128)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
 	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
@@ -99,22 +89,20 @@ com.microsoft.sqlserver.jdbc.SQLServerException: Invalid column name 'precioBase
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-[06-11-2025 14:30:04] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:30:04] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
-[06-11-2025 14:30:06] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al obtener detalles del pedido 2
-com.microsoft.sqlserver.jdbc.SQLServerException: El nombre de columna precioBase no es válido.
-	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:248)
-	at com.microsoft.sqlserver.jdbc.SQLServerResultSet.findColumn(SQLServerResultSet.java:748)
-	at com.microsoft.sqlserver.jdbc.SQLServerResultSet.getDouble(SQLServerResultSet.java:2320)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findDetailsByOrderId(OrderDao.java:89)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:146)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:272)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:129)
-	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+[20-11-2025 11:19:17] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[20-11-2025 11:19:17] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[20-11-2025 11:19:18] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/ReportPane.fxml"
+javafx.fxml.LoadException: DatePicker is not a valid type.
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/ReportPane.fxml:87
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2688)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.createElement(FXMLLoader.java:2890)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2820)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
-	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:93)
-	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:128)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
 	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
@@ -141,20 +129,25 @@ com.microsoft.sqlserver.jdbc.SQLServerException: El nombre de columna precioBase
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-[06-11-2025 14:30:06] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al obtener detalles del pedido 4
-com.microsoft.sqlserver.jdbc.SQLServerException: El nombre de columna precioBase no es válido.
-	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:248)
-	at com.microsoft.sqlserver.jdbc.SQLServerResultSet.findColumn(SQLServerResultSet.java:748)
-	at com.microsoft.sqlserver.jdbc.SQLServerResultSet.getDouble(SQLServerResultSet.java:2320)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findDetailsByOrderId(OrderDao.java:89)
-	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:146)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:272)
-	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:129)
-	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+[20-11-2025 11:19:22] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[20-11-2025 11:19:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[20-11-2025 11:19:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[20-11-2025 11:19:22] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[20-11-2025 11:19:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[20-11-2025 11:19:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[20-11-2025 11:19:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[20-11-2025 11:19:24] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/ReportPane.fxml"
+javafx.fxml.LoadException: DatePicker is not a valid type.
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/ReportPane.fxml:87
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2688)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.createElement(FXMLLoader.java:2890)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2820)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
 	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
-	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:93)
-	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:128)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
 	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
 	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
@@ -181,5 +174,6 @@ com.microsoft.sqlserver.jdbc.SQLServerException: El nombre de columna precioBase
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
 	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
 	at java.base/java.lang.Thread.run(Thread.java:1575)
-[06-11-2025 14:32:07] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
-[06-11-2025 14:32:07] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[20-11-2025 11:20:58] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[20-11-2025 11:20:58] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[20-11-2025 11:22:39] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]

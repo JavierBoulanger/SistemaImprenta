@@ -14,11 +14,12 @@ import org.slf4j.LoggerFactory;
 import pe.edu.utp.sistemaimprenta.controller.SidebarItemController;
 
 public class ViewLoader {
-    
+
     private static final Logger log = LoggerFactory.getLogger(ViewLoader.class);
+
     private ViewLoader() {
     }
-    
+
     private static FXMLLoader createFXMLLoader(String fxmlPath) throws IOException {
         URL resource = ViewLoader.class.getResource(fxmlPath);
         if (resource == null) {
@@ -37,7 +38,7 @@ public class ViewLoader {
             stage.setResizable(resizable);
             stage.show();
         } catch (IOException e) {
-            log.error(String.format("No se pudó abrir el fxml \"%s\"", fxmlPath),e);
+            log.error(String.format("No se pudó abrir el fxml \"%s\"", fxmlPath), e);
         }
     }
 
@@ -47,7 +48,7 @@ public class ViewLoader {
             Parent root = loader.load();
             mainPanel.getChildren().setAll(root);
         } catch (IOException e) {
-            log.error(String.format("Error al cambiar panel \"%s\"", fxmlPath),e);
+            log.error(String.format("Error al cambiar panel \"%s\"", fxmlPath), e);
         }
     }
 
@@ -63,40 +64,41 @@ public class ViewLoader {
             stage.show();
             return loader.getController();
         } catch (IOException e) {
-            log.error(String.format("Error al abrir ventana con controlador \"%s\"", fxmlPath),e);
+            log.error(String.format("Error al abrir ventana con controlador \"%s\"", fxmlPath), e);
             return null;
         }
     }
-    
-    public static record SidebarItemResult(HBox node, SidebarItemController controller) {}
 
-    public static SidebarItemResult loadSidebarItem(String text, String iconPath){
+    public static record SidebarItemResult(HBox node, SidebarItemController controller) {
+
+    }
+
+    public static SidebarItemResult loadSidebarItem(String text, String iconPath) {
         try {
             FXMLLoader loader = createFXMLLoader(FxmlPath.SIDEBAR_ITEM.getPath());
             HBox sidebarItem = loader.load();
             SidebarItemController controller = loader.getController();
-            
             controller.setLabelText(text);
             controller.setIconImage(new Image(ViewLoader.class.getResourceAsStream(iconPath)));
-            
+          
+            controller.lightenIcon();
             return new SidebarItemResult(sidebarItem, controller);
         } catch (Exception e) {
-            log.error("No se pudó cargar la barra lateral",e);
+            log.error("No se pudó cargar la barra lateral", e);
             return null;
         }
+    }
 
-    }
-    
     public static <T> T changeMainPanelGetController(Pane mainPanel, String fxmlPath) {
-    try {
-        FXMLLoader loader = createFXMLLoader(fxmlPath);
-        Parent root = loader.load();
-        mainPanel.getChildren().setAll(root);
-        return loader.getController();
-    } catch (IOException e) {
-        log.error(String.format("Error al cambiar panel con controlador \"%s\"", fxmlPath), e);
-        return null;
+        try {
+            FXMLLoader loader = createFXMLLoader(fxmlPath);
+            Parent root = loader.load();
+            mainPanel.getChildren().setAll(root);
+            return loader.getController();
+        } catch (IOException e) {
+            log.error(String.format("Error al cambiar panel con controlador \"%s\"", fxmlPath), e);
+            return null;
+        }
     }
-}
 
 }

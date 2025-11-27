@@ -15,7 +15,8 @@ public enum FxmlPath {
     CONFIG_PANE("/views/ConfigPane.fxml"),
     PAYMENT_PANE("/views/PaymentPaneDashboard.fxml"),
     PAYMENT_ITEM("/views/PaymentItem.fxml"),
-    TICKET("/views/TicketView.fxml");
+    TICKET("/views/TicketView.fxml"),
+    REPORT_PANE("/views/ReportPane.fxml");
     
     private final String path;
 

@@ -3,7 +3,6 @@ package pe.edu.utp.sistemaimprenta.controller;
 import java.net.URL;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -47,9 +46,6 @@ public class DashboardController implements Initializable {
     @FXML
     private VBox sideBar;
 
-    @FXML
-    private HBox topBar;
-
     private User user;
     private HBox selectedItem = null;
 
@@ -61,17 +57,15 @@ public class DashboardController implements Initializable {
     }
 
     private void crearItemsVendedor() {
-        createSidebarItem("Clientes", "/images/EyePassword", "/views/UsersPane.fxml");
-        createSidebarItem("Pedidos", "", "/views/Peliculas.fxml");
-        createSidebarItem("Cotizaciones", "", "/views/Peliculas.fxml");
-        createSidebarItem("Pagos", "", "/views/Peliculas.fxml");
-        createSidebarItem("Reportes", "", "/views/Peliculas.fxml");
+        createSidebarItem("Clientes", ConfigUtil.get("img.customers"), FxmlPath.CUSTOMER_PANE.getPath());
+        createSidebarItem("Productos", ConfigUtil.get("img.products"), FxmlPath.PRODUCT_PANE.getPath());
+        createSidebarItem("Pedidos", ConfigUtil.get("img.orders"), FxmlPath.ORDER_PANE.getPath());
+        createSidebarItem("Pagos", ConfigUtil.get("img.payments"), FxmlPath.PAYMENT_PANE.getPath());
+        createSidebarItem("Reportes", ConfigUtil.get("img.reports"), FxmlPath.REPORT_PANE.getPath());
     }
 
     private void crearItemsOperario() {
-        createSidebarItem("Produccion", "", "/views/Clientes.fxml");
-        createSidebarItem("Detalles Tecnicos", "", "/views/Peliculas.fxml");
-        createSidebarItem("Incidencias", "", "/views/Peliculas.fxml");
+        //sin implementar
     }
 
     private void crearItemsAdministrador() {
@@ -81,7 +75,8 @@ public class DashboardController implements Initializable {
         createSidebarItem("Productos", ConfigUtil.get("img.products"), FxmlPath.PRODUCT_PANE.getPath());
         createSidebarItem("Pedidos", ConfigUtil.get("img.orders"), FxmlPath.ORDER_PANE.getPath());
         createSidebarItem("Configuracion", ConfigUtil.get("img.configuration"), FxmlPath.CONFIG_PANE.getPath());
-        createSidebarItem("Pagos", ConfigUtil.get("img.configuration"), FxmlPath.PAYMENT_PANE.getPath());
+        createSidebarItem("Pagos", ConfigUtil.get("img.payments"), FxmlPath.PAYMENT_PANE.getPath());
+        createSidebarItem("Reportes", ConfigUtil.get("img.reports"), FxmlPath.REPORT_PANE.getPath());
     }
 
     private void setImage(ImageView imageView, String resourcePath) {

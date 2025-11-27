@@ -116,6 +116,34 @@ public class OrderController implements Initializable, UserAware {
     @FXML
     private TableColumn<Order, String> colEstadoPago;
 
+    @FXML
+    private Pane panePago;
+    @FXML
+    private Label lblSaldoPendiente;
+    @FXML
+    private Label lblTotalPagado;
+    @FXML
+    private Label lblTotalPedidoPago;
+    @FXML
+    private Label lblClientePago;
+    @FXML
+    private ComboBox<PaymentMethod> cmbMetodoPago;
+    @FXML
+    private TextField txtMontoPago;
+    @FXML
+    private Label lblErrorPago;
+    @FXML
+    private Button btnGuardarPago;
+    @FXML
+    private Button btnCancelarPago;
+
+    @FXML
+    private Button btnRegistrarPago;
+
+    private final PaymentDao paymentDAO = new PaymentDao();
+    private Order pedidoSeleccionado;
+    private double montoPendiente;
+
     private ObservableList<Order> listaPedidos;
     private final ObservableList<OrderDetail> detalles = FXCollections.observableArrayList();
 
@@ -139,6 +167,11 @@ public class OrderController implements Initializable, UserAware {
     @Override
     public void setUsuarioActual(User user) {
         this.usuarioActual = user;
+
+        if (this.usuarioActual != null) {
+            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) 
+                btnAgregar.setVisible(false);
+        }
     }
 
     private void configurarTabla() {
@@ -188,6 +221,7 @@ public class OrderController implements Initializable, UserAware {
     }
 
     private void configurarBotones() {
+
         btnVerBoleta.setOnAction(e -> mostrarBoleta());
         btnBuscar.setOnMouseClicked(e -> buscarPedido());
         btnActualizar.setOnAction(e -> refrescarTabla());
@@ -202,12 +236,23 @@ public class OrderController implements Initializable, UserAware {
 
         btnRegistrarPago.setOnAction(e -> {
             pedidoSeleccionado = tablaDatos.getSelectionModel().getSelectedItem();
-            if (pedidoSeleccionado != null) {
-                cargarDatosPedido(pedidoSeleccionado);
-            } else {
+
+            if (pedidoSeleccionado == null) {
                 Message.showMessage(lblErrorPedido, "Seleccione un pedido antes de registrar un pago", "red");
+                return;
             }
+
+            double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedidoSeleccionado.getId());
+            double totalPedido = pedidoSeleccionado.getTotalAmount();
+
+            if (totalPagado >= totalPedido) {
+                Message.showMessage(lblErrorPedido, "Este pedido ya está completamente pagado. No puede registrar más pagos.", "red");
+                return;
+            }
+
+            cargarDatosPedido(pedidoSeleccionado);
         });
+
     }
 
     private void agregarDetalle() {
@@ -369,34 +414,6 @@ public class OrderController implements Initializable, UserAware {
         }
     }
 
-    @FXML
-    private Pane panePago;
-    @FXML
-    private Label lblSaldoPendiente;
-    @FXML
-    private Label lblTotalPagado;
-    @FXML
-    private Label lblTotalPedidoPago;
-    @FXML
-    private Label lblClientePago;
-    @FXML
-    private ComboBox<PaymentMethod> cmbMetodoPago;
-    @FXML
-    private TextField txtMontoPago;
-    @FXML
-    private Label lblErrorPago;
-    @FXML
-    private Button btnGuardarPago;
-    @FXML
-    private Button btnCancelarPago;
-
-    @FXML
-    private Button btnRegistrarPago;
-
-    private final PaymentDao paymentDAO = new PaymentDao();
-    private Order pedidoSeleccionado;
-    private double montoPendiente;
-
     public void cargarDatosPedido(Order pedido) {
         this.pedidoSeleccionado = pedido;
 
@@ -473,7 +490,7 @@ public class OrderController implements Initializable, UserAware {
         nuevoPago.setMonto(monto);
         nuevoPago.setFechaPago(LocalDateTime.now());
 
-        boolean exito = paymentDAO.registrarPago(nuevoPago);
+        boolean exito = paymentDAO.registrarPago(nuevoPago, usuarioActual);
 
         if (exito) {
             Message.showMessage(lblErrorPago, "Pago registrado correctamente.", "green");

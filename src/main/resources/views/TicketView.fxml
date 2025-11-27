@@ -25,15 +25,16 @@
         <columnConstraints>
             <ColumnConstraints halignment="RIGHT" />
             <ColumnConstraints halignment="LEFT" />
+         <ColumnConstraints halignment="LEFT" />
         </columnConstraints>
         <Label text="Cliente:" />
-        <Label fx:id="lblCliente" />
+        <Label fx:id="lblCliente" prefHeight="18.0" prefWidth="391.0" GridPane.columnIndex="2" />
         <Label text="Fecha:" GridPane.rowIndex="1" />
-        <Label fx:id="lblFecha" GridPane.rowIndex="1" />
+        <Label fx:id="lblFecha" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <Label text="Vendedor:" GridPane.rowIndex="2" />
-        <Label fx:id="lblVendedor" GridPane.rowIndex="2" />
+        <Label fx:id="lblVendedor" GridPane.columnIndex="2" GridPane.rowIndex="2" />
         <Label text="N° Pedido:" GridPane.rowIndex="3" />
-        <Label fx:id="lblIdPedido" GridPane.rowIndex="3" />
+        <Label fx:id="lblIdPedido" GridPane.columnIndex="2" GridPane.rowIndex="3" />
       <rowConstraints>
          <RowConstraints />
          <RowConstraints />

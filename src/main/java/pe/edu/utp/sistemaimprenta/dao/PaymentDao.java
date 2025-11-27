@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pe.edu.utp.sistemaimprenta.db.DBConnection;
 import pe.edu.utp.sistemaimprenta.model.*;
+import pe.edu.utp.sistemaimprenta.util.AuditUtil;
 
 public class PaymentDao {
 
@@ -21,14 +22,14 @@ public class PaymentDao {
     public List<Payment> listarPagos() {
         List<Payment> lista = new ArrayList<>();
         String sql = """
-            SELECT p.id_pago, p.id_pedido, p.id_metodo_pago, p.id_estado_pago, p.monto, p.fecha_pago,
-                   c.nombres AS cliente, pr.nombre AS descripcion
-            FROM Pago p
-            INNER JOIN Pedido pe ON pe.id_pedido = p.id_pedido
-            INNER JOIN Cliente c ON c.id_cliente = pe.id_cliente
-            INNER JOIN DetallePedido dp ON dp.id_pedido = pe.id_pedido
-            INNER JOIN Producto pr ON pr.id_producto = dp.id_producto
-        """;
+                        SELECT p.id_pago, p.id_pedido, p.id_metodo_pago, p.id_estado_pago, 
+                               p.monto, p.fecha_pago,
+                               c.nombres AS cliente
+                        FROM Pago p
+                        INNER JOIN Pedido pe ON pe.id_pedido = p.id_pedido
+                        INNER JOIN Cliente c ON c.id_cliente = pe.id_cliente
+                        ORDER BY p.fecha_pago DESC
+                    """;
 
         try (Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
 
@@ -52,7 +53,7 @@ public class PaymentDao {
         return lista;
     }
 
-    public boolean registrarPago(Payment pago) {
+    public boolean registrarPago(Payment pago, User u) {
         String sql = """
         INSERT INTO Pago (id_pedido, id_metodo_pago, id_estado_pago, monto, fecha_pago)
         VALUES (?, ?, ?, ?, ?)
@@ -63,12 +64,7 @@ public class PaymentDao {
             double totalPedido = pago.getOrder().getTotalAmount();
             double nuevoTotal = totalPagadoActual + pago.getMonto();
 
-            PaymentStatus estadoPago;
-            if (nuevoTotal < totalPedido) {
-                estadoPago = PaymentStatus.PARCIAL;
-            } else {
-                estadoPago = PaymentStatus.PAGADO;
-            }
+            PaymentStatus estadoPago = (nuevoTotal < totalPedido) ? PaymentStatus.PARCIAL : PaymentStatus.PAGADO;
 
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, pago.getOrder().getId());
@@ -78,6 +74,13 @@ public class PaymentDao {
                 ps.setTimestamp(5, Timestamp.valueOf(pago.getFechaPago()));
 
                 int rows = ps.executeUpdate();
+
+                AuditUtil.registrar(
+                        u,
+                        "Registró pago por Pedido " + pago.getOrder().getId() + " por S/ " + pago.getMonto(),
+                        AuditType.CREACION
+                );
+
                 log.info("Pago registrado: Pedido={}, Monto={}, Estado={}", pago.getOrder().getId(), pago.getMonto(), estadoPago);
                 return rows > 0;
             }
@@ -157,12 +160,14 @@ public class PaymentDao {
         return 0.0;
     }
 
-    public boolean anularPago(int idPago) {
+    public boolean anularPago(int idPago, User u) {
         String sql = "UPDATE Pago SET id_estado_pago = 3 WHERE id_pago = ?";
 
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, idPago);
             int rows = ps.executeUpdate();
+
+            AuditUtil.registrar(u, "Anuló el pago #" + idPago, AuditType.ELIMINACION);
 
             log.info("Pago anulado: ID={} ({} filas afectadas)", idPago, rows);
             return rows > 0;
@@ -172,4 +177,5 @@ public class PaymentDao {
             return false;
         }
     }
+
 }

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600" prefWidth="1050" styleClass="reportes-root" stylesheets="@css/styleReport.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.ReportController">
+
+    <VBox spacing="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets left="20" top="20" right="20"/>
+            </padding>
+            <ImageView fitHeight="40" fitWidth="40">
+                <image>
+                    <Image url="@../images/icons/dashboard/report.png" />
+                </image>
+            </ImageView>
+            <VBox spacing="3">
+                <Label styleClass="title" text="Panel de Reportes Inteligentes" />
+            </VBox>
+        </HBox>
+
+        <HBox spacing="20">
+            <padding>
+                <Insets left="20" right="20"/>
+            </padding>
+
+            <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
+                <Label styleClass="card-title" text="Ventas Totales" />
+                <Label fx:id="lblVentasMensuales" styleClass="card-monto" text="S/ 0.00" />
+                <styleClass>
+                    <String fx:value="card-resumen" />
+                    <String fx:value="card-azul" />
+                </styleClass>
+            </VBox>
+
+            <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
+                <Label styleClass="card-title" text="Pedidos" />
+                <Label fx:id="lblPedidosCompletados" styleClass="card-monto" text="0" />
+                <styleClass>
+                    <String fx:value="card-resumen" />
+                    <String fx:value="card-verde" />
+                </styleClass>
+            </VBox>
+
+            <VBox alignment="CENTER" prefHeight="90.0" prefWidth="180.0">
+                <Label styleClass="card-title" text="Clientes Nuevos" />
+                <Label fx:id="lblClientesNuevos" styleClass="card-monto" text="0" />
+                <styleClass>
+                    <String fx:value="card-resumen" />
+                    <String fx:value="card-amarillo" />
+                </styleClass>
+            </VBox>
+        </HBox>
+
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="10"/>
+            </padding>
+            
+            <VBox fx:id="mainContainer" spacing="10" styleClass="contenedor-reportes">
+
+                <TitledPane fx:id="paneClientes" animated="true" text="Reporte de Clientes">
+                    <VBox spacing="15">
+                        <padding>
+                            <Insets bottom="15" left="15" right="15" top="15" />
+                        </padding>
+                        
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Rango:" style="-fx-font-weight: bold;"/>
+                            <DatePicker fx:id="fechaInicio" promptText="Desde" />
+                            <DatePicker fx:id="fechaFin" promptText="Hasta" />
+                            <Button fx:id="btnFiltrar" text="Aplicar Filtros" styleClass="btn-action"/>
+                        </HBox>
+
+                        <VBox fx:id="contenedorGraficosClientes" spacing="30" />
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnPdfClientes" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <TitledPane fx:id="paneUsuarios" animated="true" expanded="false" text="Reporte de Usuarios del Sistema">
+                    <VBox spacing="15">
+                        <padding>
+                            <Insets bottom="15" left="15" right="15" top="15" />
+                        </padding>
+
+                        <VBox fx:id="contenedorGraficosUsuarios" spacing="30" />
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnPdfUsuarios" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <TitledPane fx:id="panePedidos" animated="true" expanded="false" text="Reporte de Pedidos">
+                    <VBox spacing="15">
+                        <padding>
+                            <Insets bottom="15" left="15" right="15" top="15" />
+                        </padding>
+
+                        <VBox fx:id="contenedorGraficosPedidos" spacing="30" />
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnPdfPedidos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+                
+                <TitledPane fx:id="paneProductos" animated="true" expanded="false" text="Reporte de Productos">
+                    <VBox spacing="15">
+                        <padding>
+                            <Insets bottom="15" left="15" right="15" top="15" />
+                        </padding>
+
+                        <VBox fx:id="contenedorGraficosProductos" spacing="30" />
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnPdfProductos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <TitledPane fx:id="panePagos" animated="true" expanded="false" text="Reporte de Pagos">
+                    <VBox spacing="15">
+                        <padding>
+                            <Insets bottom="15" left="15" right="15" top="15" />
+                        </padding>
+
+                        <VBox fx:id="contenedorGraficosPagos" spacing="30" />
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button fx:id="btnPdfPagos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>

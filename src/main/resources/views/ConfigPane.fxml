@@ -14,7 +14,6 @@
 
     <children>
 
-        <!-- Panel de Datos de la Empresa -->
         <Pane layoutX="37.0" layoutY="90.0" prefHeight="185.0" prefWidth="944.0" styleClass="panel">
             <children>
                 <Label layoutX="33.0" layoutY="14.0" styleClass="title2" text="Datos de la empresa" />
@@ -28,7 +27,6 @@
             </children>
         </Pane>
 
-        <!-- Panel de Configuración de Imágenes -->
         <ScrollPane fitToWidth="true" layoutX="39.0" layoutY="291.0" prefHeight="206.0" prefWidth="944.0" styleClass="panel">
             <content>
                 <VBox fx:id="vboxImagenes" spacing="15.0">

@@ -13,6 +13,10 @@ public class OrderDao implements CrudDao<Order> {
 
     private static final Logger log = LoggerFactory.getLogger(OrderDao.class);
 
+    private Connection getConnection() {
+        return DBConnection.getInstance().getConnection();
+    }
+
     @Override
     public boolean save(Order order, User user) {
         String sqlPedido = """
@@ -25,7 +29,7 @@ public class OrderDao implements CrudDao<Order> {
             VALUES (?, ?, ?, ?, ?)
         """;
 
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
 
         try {
             conn.setAutoCommit(false);
@@ -59,24 +63,26 @@ public class OrderDao implements CrudDao<Order> {
             return true;
 
         } catch (SQLException e) {
-            try { conn.rollback(); } catch (SQLException ignored) {}
+            try {
+                conn.rollback();
+            } catch (SQLException ignored) {
+            }
             log.error("Error al registrar pedido", e);
             return false;
         }
     }
 
-   
     public List<OrderDetail> findDetailsByOrderId(int orderId) {
         List<OrderDetail> detalles = new ArrayList<>();
         String sql = """
             SELECT d.id_detalle_pedido, d.cantidad, d.precioUnitario, d.subtotal,
-                   p.id_producto, p.nombre AS producto, p.precio_unitario
+                    p.id_producto, p.nombre AS producto, p.precio_unitario
             FROM DetallePedido d
             INNER JOIN Producto p ON d.id_producto = p.id_producto
             WHERE d.id_pedido = ?
         """;
 
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, orderId);
@@ -109,16 +115,16 @@ public class OrderDao implements CrudDao<Order> {
     public List<Order> findAll() {
         String sql = """
             SELECT p.id_pedido, p.fechaRegistro, p.fechaEntrega, p.montoTotal,
-                   p.id_estado_pedido,
-                   c.id_cliente, c.nombres AS cliente,
-                   u.id_usuario, u.nombre AS usuario
+                    p.id_estado_pedido,
+                    c.id_cliente, c.nombres AS cliente,
+                    u.id_usuario, u.nombre AS usuario
             FROM Pedido p
             INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
             INNER JOIN Usuario u ON p.id_usuario = u.id_usuario
         """;
 
         List<Order> lista = new ArrayList<>();
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -159,20 +165,22 @@ public class OrderDao implements CrudDao<Order> {
     public Order findById(int id) {
         String sqlPedido = """
             SELECT p.*, c.id_cliente, c.nombre AS cliente,
-                   u.id_usuario, u.nombre AS usuario
+                    u.id_usuario, u.nombre AS usuario
             FROM Pedido p
             INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
             INNER JOIN Usuario u ON p.id_usuario = u.id_usuario
             WHERE p.id_pedido = ?
         """;
 
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
         try {
             PreparedStatement psPedido = conn.prepareStatement(sqlPedido);
             psPedido.setInt(1, id);
             ResultSet rs = psPedido.executeQuery();
 
-            if (!rs.next()) return null;
+            if (!rs.next()) {
+                return null;
+            }
 
             Order o = new Order();
             o.setId(rs.getInt("id_pedido"));
@@ -192,7 +200,6 @@ public class OrderDao implements CrudDao<Order> {
             o.setDeliveryDate(rs.getTimestamp("fechaEntrega").toLocalDateTime());
             o.setTotalAmount(rs.getDouble("montoTotal"));
 
-            // 🔹 Cargar detalles también aquí
             o.setDetails(findDetailsByOrderId(id));
 
             return o;
@@ -211,7 +218,7 @@ public class OrderDao implements CrudDao<Order> {
             WHERE id_pedido = ?
         """;
 
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, order.getState().getId());
@@ -234,7 +241,7 @@ public class OrderDao implements CrudDao<Order> {
         String sqlDetalle = "DELETE FROM DetallePedido WHERE id_pedido = ?";
         String sqlPedido = "DELETE FROM Pedido WHERE id_pedido = ?";
 
-        Connection conn = DBConnection.getInstance().getConnection();
+        Connection conn = getConnection();
         try {
             conn.setAutoCommit(false);
 
@@ -251,9 +258,70 @@ public class OrderDao implements CrudDao<Order> {
             return true;
 
         } catch (SQLException e) {
-            try { conn.rollback(); } catch (SQLException ignored) {}
+            try {
+                conn.rollback();
+            } catch (SQLException ignored) {
+            }
             log.error("Error al eliminar pedido", e);
             return false;
         }
+    }
+
+    // metodos para reportes
+    public List<Object[]> findTopSellingProducts(int limit) {
+        List<Object[]> resultados = new ArrayList<>();
+        // Consulta para SQL Server/Azure SQL (usando TOP (?))
+        String query = """
+            SELECT TOP (?) P.nombre, SUM(DP.cantidad) AS UnidadesVendidas
+            FROM DetallePedido DP
+            INNER JOIN Producto P ON P.id_producto = DP.id_producto
+            GROUP BY P.nombre
+            ORDER BY UnidadesVendidas DESC
+        """;
+
+        Connection conn = getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, limit);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    resultados.add(new Object[]{
+                        rs.getString("nombre"),
+                        rs.getLong("UnidadesVendidas")
+                    });
+                }
+            }
+        } catch (SQLException e) {
+            log.error("Error al obtener el top de productos vendidos", e);
+        }
+        return resultados;
+    }
+
+    public List<Object[]> findIncomeByProductType() {
+        List<Object[]> resultados = new ArrayList<>();
+
+        String query = """
+            SELECT TP.nombre AS TipoProducto, SUM(P.montoTotal) AS IngresoTotal
+            FROM Pedido P
+            INNER JOIN DetallePedido DP ON DP.id_pedido = P.id_pedido
+            INNER JOIN Producto PR ON PR.id_producto = DP.id_producto
+            INNER JOIN TipoProducto TP ON TP.id_tipo_producto = PR.id_tipo_producto
+            GROUP BY TP.nombre
+            ORDER BY IngresoTotal DESC
+        """;
+
+        Connection conn = getConnection();
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                resultados.add(new Object[]{
+                    rs.getString("TipoProducto"),
+                    rs.getDouble("IngresoTotal")
+                });
+            }
+
+        } catch (SQLException e) {
+            log.error("Error al obtener ingresos por tipo de producto", e);
+        }
+        return resultados;
     }
 }

@@ -1,0 +1,83 @@
+.reportes-root {
+    -fx-background-color: #f5f6fa;
+}
+
+/* Título */
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+/* Tarjetas resumen */
+.card-resumen {
+    -fx-background-radius: 10px;
+    -fx-padding: 15;
+    -fx-min-width: 200;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 5, 0, 0, 2);
+}
+
+.card-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2d3436;
+}
+
+.card-monto {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+}
+
+/* Colores tarjetas */
+.card-verde {
+    -fx-background-color: #27ae60;
+}
+
+.card-azul {
+    -fx-background-color: #0984e3;
+}
+
+.card-amarillo {
+    -fx-background-color: #f1c40f;
+}
+
+/* Contenedor de reportes */
+.contenedor-reportes {
+    -fx-padding: 10;
+}
+
+/* Panel colapsable */
+.titled-pane > .title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #dcdde1;
+    -fx-padding: 10;
+}
+
+.titled-pane > .content {
+    -fx-background-color: #ffffff;
+}
+
+/* Gráficos placeholder */
+.chart-placeholder {
+    -fx-background-color: #dfe6e9;
+    -fx-background-radius: 5;
+    -fx-border-color: #b2bec3;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+}
+
+/* Botones */
+.export-btn {
+    -fx-background-color: #636e72;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+}
+
+.export-btn:hover {
+    -fx-background-color: #2d3436;
+}

@@ -68,7 +68,6 @@
                <TextField fx:id="txtCantidad" layoutX="402.0" layoutY="90.0" prefHeight="30.0" prefWidth="285.0" promptText="Ingresar cantidad" styleClass="text-field" />
                <ComboBox fx:id="cmbEstado" layoutX="57.0" layoutY="132.0" prefHeight="30.0" prefWidth="285.0" promptText="Seleccionar estado" styleClass="text-field" />
 
-               <!-- Botones -->
                <Button fx:id="btnGuardarPedido" layoutX="222.0" layoutY="414.0" prefHeight="33.0" prefWidth="137.0" text="Guardar Pedido" />
                <Button fx:id="btnCancelarPedido" layoutX="382.0" layoutY="414.0" prefHeight="33.0" prefWidth="137.0" styleClass="delete" text="Cancelar" />
                <DatePicker fx:id="dateEntrega" layoutX="402.0" layoutY="132.0" prefHeight="30.0" prefWidth="285.0" promptText="Fecha Entrega" />

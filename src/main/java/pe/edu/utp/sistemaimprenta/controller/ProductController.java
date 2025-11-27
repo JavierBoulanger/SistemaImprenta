@@ -14,6 +14,7 @@ import pe.edu.utp.sistemaimprenta.dao.ProductDao;
 import pe.edu.utp.sistemaimprenta.model.Product;
 import pe.edu.utp.sistemaimprenta.model.ProductType;
 import pe.edu.utp.sistemaimprenta.model.User;
+import pe.edu.utp.sistemaimprenta.model.UserType;
 import pe.edu.utp.sistemaimprenta.util.Export;
 import pe.edu.utp.sistemaimprenta.util.Message;
 import pe.edu.utp.sistemaimprenta.util.Notification;
@@ -80,6 +81,10 @@ public class ProductController implements Initializable, UserAware {
         configurarEventos();
         btnExcel.setOnAction(this::exportarExcel);
         btnCsv.setOnAction(this::exportarCsv);
+        cmbFiltro.setItems(FXCollections.observableArrayList("Nombre", "Tipo", "Estado"));
+        cmbFiltro.getSelectionModel().selectFirst();
+
+        btnBuscar.setOnMouseClicked(e -> buscarProducto());
     }
 
     private void configurarColumnas() {
@@ -105,7 +110,7 @@ public class ProductController implements Initializable, UserAware {
             btnGuardar.setVisible(true);
             btnActualizarModal.setVisible(false);
         });
-        
+
         btnActualizar.setOnAction(e -> {
             lblTituloModal.setText("Editar Producto");
             Product seleccionado = tablaProductos.getSelectionModel().getSelectedItem();
@@ -118,12 +123,12 @@ public class ProductController implements Initializable, UserAware {
             btnGuardar.setVisible(false);
             btnActualizarModal.setVisible(true);
         });
-        
+
         btnCancelar.setOnAction(e -> paneNuevoProducto.setVisible(false));
         btnGuardar.setOnAction(e -> registrarProducto());
         btnEliminar.setOnAction(e -> eliminarProducto());
         btnActualizarModal.setOnAction(e -> actualizarProducto());
-        
+
         tablaProductos.getSelectionModel().selectedItemProperty()
                 .addListener((obs, oldSel, newSel) -> mostrarSeleccionado(newSel));
     }
@@ -143,7 +148,7 @@ public class ProductController implements Initializable, UserAware {
             Notification.showNotification("PRODUCTO", "Registrado correctamente", 4, NotificationType.SUCCESS);
             refrescarTabla();
             limpiarCampos();
-            paneNuevoProducto.setVisible(false); 
+            paneNuevoProducto.setVisible(false);
         }
     }
 
@@ -182,6 +187,30 @@ public class ProductController implements Initializable, UserAware {
             Notification.showNotification("PRODUCTO", "Eliminado correctamente", 4, NotificationType.SUCCESS);
             refrescarTabla();
         }
+    }
+
+    private void buscarProducto() {
+        String filtro = cmbFiltro.getValue();
+        String texto = txtBuscar.getText().trim().toLowerCase();
+
+        if (texto.isEmpty()) {
+            refrescarTabla();
+            return;
+        }
+
+        var filtrados = productoDao.findAll().stream().filter(p
+                -> switch (filtro) {
+            case "Nombre" ->
+                p.getName().toLowerCase().contains(texto);
+            case "Tipo" ->
+                p.getType().name().toLowerCase().contains(texto);
+            case "Estado" ->
+                p.getState().toLowerCase().contains(texto);
+            default ->
+                false;
+        }).toList();
+
+        listaProductos.setAll(filtrados);
     }
 
     private void refrescarTabla() {
@@ -237,6 +266,11 @@ public class ProductController implements Initializable, UserAware {
     @Override
     public void setUsuarioActual(User usuarioActual) {
         this.usuarioActual = usuarioActual;
+        
+        if (this.usuarioActual != null) {
+            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) 
+                btnNuevo.setVisible(false);
+        }
     }
 
     private void exportarExcel(ActionEvent e) {

@@ -59,8 +59,8 @@ public class LoginController implements Initializable {
             Notification.showNotification("Login", "Ingreso exitoso", 4, NotificationType.SUCCESS);
             openDashboard(user);
             closeCurrentStage();
-        */
         
+        */
         if (userDao.validateLogin(u, p)) {
             User user = userDao.getUser();
             Message.showMessage(lblError,"Inicio de sesión exitoso", "green");

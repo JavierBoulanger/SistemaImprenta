@@ -51,7 +51,6 @@ public class ConfigController implements Initializable {
 
         Map<String, String> keys = Map.ofEntries(
                 Map.entry("img.logo", "Logo del Sistema"),
-                Map.entry("img.user", "Imagen de Usuario"),
                 Map.entry("img.iconClientes", "Ícono Clientes"),
                 Map.entry("img.iconPedidos", "Ícono Pedidos"),
                 Map.entry("img.iconProductos", "Ícono Productos"),

@@ -13,12 +13,10 @@
 
 <BorderPane prefHeight="645.0" prefWidth="1239.0" stylesheets="@../views/css/styleDashboard.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.DashboardController">
 
-    <!-- ====== SIDEBAR IZQUIERDO ====== -->
     <left>
         <VBox fx:id="sideBar" prefWidth="230.0" styleClass="side-bar" />
     </left>
 
-    <!-- ====== TOP BAR SUPERIOR ====== -->
     <top>
         <HBox fx:id="topBar" alignment="CENTER_RIGHT" prefHeight="60.0" styleClass="top-bar">
             <padding>
@@ -39,7 +37,6 @@
                   </VBox>
                </children></HBox>
                 
-                <!-- Información de usuario -->
                 <HBox alignment="CENTER_RIGHT" spacing="10">
                     <children>
                         <VBox alignment="CENTER_RIGHT">
@@ -60,7 +57,7 @@
                                             <children>
                                                 <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
                                                     <image>
-                                                        <Image url="@/images/Logout.png" />
+                                                        <Image url="@../images/icons/logout.png" />
                                                     </image>
                                                 </ImageView>
                                                 <Label style="-fx-text-fill: white; -fx-font-size: 13px;" text="Cerrar sesión" />
@@ -76,7 +73,6 @@
         </HBox>
     </top>
 
-    <!-- ====== PANEL PRINCIPAL ====== -->
     <center>
         <Pane fx:id="mainPanel" styleClass="main-panel" />
     </center>
