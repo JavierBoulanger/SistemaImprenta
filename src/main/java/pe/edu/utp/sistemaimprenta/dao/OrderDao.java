@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.*;
 
 public class OrderDao implements CrudDao<Order> {
@@ -116,7 +117,7 @@ public class OrderDao implements CrudDao<Order> {
         String sql = """
             SELECT p.id_pedido, p.fechaRegistro, p.fechaEntrega, p.montoTotal,
                     p.id_estado_pedido,
-                    c.id_cliente, c.nombres AS cliente,
+                    c.id_cliente, c.nombres AS clienteNom, c.apellidos AS clienteAp, 
                     u.id_usuario, u.nombre AS usuario
             FROM Pedido p
             INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
@@ -136,7 +137,8 @@ public class OrderDao implements CrudDao<Order> {
 
                 Customer c = new Customer();
                 c.setId(rs.getInt("id_cliente"));
-                c.setName(rs.getString("cliente"));
+                c.setName(rs.getString("clienteNom"));
+                c.setLastName(rs.getString("clienteAp"));
                 o.setCustomer(c);
 
                 User u = new User();
@@ -268,31 +270,42 @@ public class OrderDao implements CrudDao<Order> {
     }
 
     // metodos para reportes
-    public List<Object[]> findTopSellingProducts(int limit) {
+    public List<Object[]> findTopSellingProducts(LocalDate fechaInicio, LocalDate fechaFin, int limit) {
         List<Object[]> resultados = new ArrayList<>();
-        // Consulta para SQL Server/Azure SQL (usando TOP (?))
-        String query = """
-            SELECT TOP (?) P.nombre, SUM(DP.cantidad) AS UnidadesVendidas
-            FROM DetallePedido DP
-            INNER JOIN Producto P ON P.id_producto = DP.id_producto
-            GROUP BY P.nombre
-            ORDER BY UnidadesVendidas DESC
-        """;
 
-        Connection conn = getConnection();
+        String query = """
+        SELECT TOP (?) P.nombre, SUM(DP.cantidad) AS UnidadesVendidas
+        FROM DetallePedido DP
+        INNER JOIN Producto P ON P.id_producto = DP.id_producto
+        INNER JOIN Pedido PE ON PE.id_pedido = DP.id_pedido
+        WHERE PE.fechaRegistro BETWEEN ? AND ?
+        GROUP BY P.nombre
+        ORDER BY UnidadesVendidas DESC
+    """;
+
+        Connection conn = getConnection(); 
+
         try (PreparedStatement ps = conn.prepareStatement(query)) {
+
             ps.setInt(1, limit);
+
+            ps.setTimestamp(2, Timestamp.valueOf(fechaInicio.atStartOfDay()));
+            ps.setTimestamp(3, Timestamp.valueOf(fechaFin.atTime(23, 59, 59)));
+
             try (ResultSet rs = ps.executeQuery()) {
+
                 while (rs.next()) {
-                    resultados.add(new Object[]{
-                        rs.getString("nombre"),
-                        rs.getLong("UnidadesVendidas")
-                    });
+                    String nombre = rs.getString("nombre");
+                    int unidades = rs.getInt("UnidadesVendidas");
+                    resultados.add(new Object[]{nombre, unidades});
                 }
+
             }
+
         } catch (SQLException e) {
-            log.error("Error al obtener el top de productos vendidos", e);
+            e.printStackTrace();
         }
+
         return resultados;
     }
 

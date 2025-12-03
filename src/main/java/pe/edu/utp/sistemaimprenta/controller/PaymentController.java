@@ -72,12 +72,12 @@ public class PaymentController {
 
     private void actualizarResumen() {
         double totalIngresos = paymentDao.obtenerTotalIngresosMes();
-        int pendientes = paymentDao.contarPorEstado(PaymentStatus.PENDIENTE);
+        int pendientes = paymentDao.contarPagosPendientesReales();
         int completados = paymentDao.contarPorEstado(PaymentStatus.PAGADO);
 
         lblTotalIngresos.setText(String.format("S/ %.2f", totalIngresos));
-        lblPagosPendientes.setText(String.valueOf(pendientes));
-        lblPagosCompletados.setText(String.valueOf(completados));
+        lblPagosPendientes.setText(pendientes+ "");
+        lblPagosCompletados.setText(completados+ "");
 
         log.debug("Resumen actualizado desde BD: ingresos=S/{}, pendientes={}, completados={}",
                 totalIngresos, pendientes, completados);
@@ -85,10 +85,22 @@ public class PaymentController {
 
     private List<Payment> filtrarPorEstado(PaymentStatus estado) {
         List<Payment> filtrados = new ArrayList<>();
+
         for (Payment p : todosPagos) {
-            if (p.getEstadoPago() == estado) filtrados.add(p);
+            if (estado == PaymentStatus.PENDIENTE) {
+                if (p.getEstadoPago() == PaymentStatus.PENDIENTE
+                        || p.getEstadoPago() == PaymentStatus.PARCIAL) {
+                    filtrados.add(p);
+                }
+            } else {
+                if (p.getEstadoPago() == estado) {
+                    filtrados.add(p);
+                }
+            }
         }
+
         log.info("Filtrados {} pagos con estado {}", filtrados.size(), estado);
         return filtrados;
     }
+
 }

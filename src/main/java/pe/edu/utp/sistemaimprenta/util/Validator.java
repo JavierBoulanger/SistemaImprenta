@@ -1,6 +1,7 @@
 package pe.edu.utp.sistemaimprenta.util;
 
 import java.util.regex.Pattern;
+import javafx.scene.control.TextField;
 
 public class Validator {
 
@@ -27,4 +28,21 @@ public class Validator {
     public static boolean isValidEmail(String email) {
         return Pattern.matches(EMAIL_REGEX, email);
     }
+
+    public static void validarSoloNumeros(TextField txt) {
+        txt.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                txt.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+    }
+
+    public static void limitarCaracteres(TextField txt, int max) {
+        txt.textProperty().addListener((obs, oldValue, newValue) -> {
+            if (newValue.length() > max) {
+                txt.setText(newValue.substring(0, max));
+            }
+        });
+    }
+
 }

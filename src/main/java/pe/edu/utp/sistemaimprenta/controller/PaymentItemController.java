@@ -56,7 +56,6 @@ public class PaymentItemController {
         lblDetalle.setText(detalle + " • "
                 + pago.getFechaPago().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 
-        // === Monto y estado ===
         lblMonto.setText(String.format("S/ %.2f", pago.getMonto()));
 
         configurarEstado(pago.getEstadoPago());

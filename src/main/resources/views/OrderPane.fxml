@@ -38,7 +38,6 @@
             </ImageView>
             <Button fx:id="btnVerBoleta" layoutX="304.0" layoutY="363.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="137.0" styleClass="csv" text="Ver Boleta" />
             <ComboBox fx:id="cmbFiltro" layoutX="521.0" layoutY="32.0" prefHeight="18.0" prefWidth="104.0" promptText="Filtrar por" />
-            <Button fx:id="btnActualizar" layoutX="453.0" layoutY="363.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="137.0" text="Actualizar" />
             <Button fx:id="btnEliminar" layoutX="601.0" layoutY="363.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="137.0" styleClass="delete" text="Eliminar" />
             <Label fx:id="lblErrorPedido" alignment="CENTER" layoutX="33.0" layoutY="337.0" prefHeight="15.0" prefWidth="888.0" styleClass="label-neutral" stylesheets="@css/style.css" />
             <Button fx:id="btnRegistrarPago" layoutX="140.0" layoutY="363.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="137.0" styleClass="excel" text="Registrar Pago" />

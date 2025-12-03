@@ -20,6 +20,7 @@ import pe.edu.utp.sistemaimprenta.util.Message;
 import pe.edu.utp.sistemaimprenta.util.Notification;
 import pe.edu.utp.sistemaimprenta.util.NotificationType;
 import pe.edu.utp.sistemaimprenta.util.UserAware;
+import pe.edu.utp.sistemaimprenta.util.Validator;
 
 public class ProductController implements Initializable, UserAware {
 
@@ -72,6 +73,10 @@ public class ProductController implements Initializable, UserAware {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Validator.limitarCaracteres(txtNombre, 30);
+        Validator.limitarCaracteres(txtPrecioBase, 10);
+        Validator.validarSoloNumeros(txtPrecioBase);
+        
         productoDao = new ProductDao();
         listaProductos = FXCollections.observableArrayList(productoDao.findAll());
         tablaProductos.setItems(listaProductos);
@@ -81,7 +86,7 @@ public class ProductController implements Initializable, UserAware {
         configurarEventos();
         btnExcel.setOnAction(this::exportarExcel);
         btnCsv.setOnAction(this::exportarCsv);
-        cmbFiltro.setItems(FXCollections.observableArrayList("Nombre", "Tipo", "Estado"));
+        cmbFiltro.setItems(FXCollections.observableArrayList("Nombre", "Tipo", "Precio"));
         cmbFiltro.getSelectionModel().selectFirst();
 
         btnBuscar.setOnMouseClicked(e -> buscarProducto());
@@ -204,8 +209,8 @@ public class ProductController implements Initializable, UserAware {
                 p.getName().toLowerCase().contains(texto);
             case "Tipo" ->
                 p.getType().name().toLowerCase().contains(texto);
-            case "Estado" ->
-                p.getState().toLowerCase().contains(texto);
+            case "Precio" ->
+                String.valueOf(p.getBasePrice()).contains(texto);
             default ->
                 false;
         }).toList();
@@ -254,7 +259,13 @@ public class ProductController implements Initializable, UserAware {
         if (cmbTipo.getValue() == null) {
             return "Debe seleccionar un tipo";
         }
-        //if (!Validator.isValidPrice(txtPrecioBase.getText())) return "El precio base no es válido";
+
+        try {
+            Double.valueOf(txtPrecioBase.getText());
+        } catch (NumberFormatException e) {
+            return "El precio debe ser un número válido";
+        }
+
         if (cmbEstado.getValue() == null) {
             return "Debe seleccionar un estado";
         }
@@ -266,10 +277,13 @@ public class ProductController implements Initializable, UserAware {
     @Override
     public void setUsuarioActual(User usuarioActual) {
         this.usuarioActual = usuarioActual;
-        
+
         if (this.usuarioActual != null) {
-            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) 
+            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) {
                 btnNuevo.setVisible(false);
+                btnActualizar.setVisible(false);
+                btnEliminar.setVisible(false);
+            }
         }
     }
 

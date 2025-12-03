@@ -110,6 +110,14 @@ public class CustomerController implements Initializable, UserAware {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Validator.validarSoloNumeros(txtTelefono);
+        Validator.validarSoloNumeros(txtDni);
+        Validator.limitarCaracteres(txtTelefono, 9);
+        Validator.limitarCaracteres(txtDni, 8);
+        Validator.limitarCaracteres(txtEmail, 30);
+        Validator.limitarCaracteres(txtNombres, 30);
+        Validator.limitarCaracteres(txtApellidos, 30);
+        Validator.limitarCaracteres(txtDireccion, 30);
         btnRegistrar.setOnAction(e -> registrar());
         btnActualizar.setOnAction(e -> actualizar());
         btnEliminar.setOnAction(e -> eliminar());
@@ -190,7 +198,7 @@ public class CustomerController implements Initializable, UserAware {
 
         Customer c = new Customer();
         llenarDatosCliente(c);
-        customerDao.save(c,usuarioActual);
+        customerDao.save(c, usuarioActual);
         refrescarTabla();
         limpiarCampos();
     }
@@ -210,7 +218,7 @@ public class CustomerController implements Initializable, UserAware {
         }
 
         llenarDatosCliente(seleccionado);
-        customerDao.update(seleccionado,usuarioActual);
+        customerDao.update(seleccionado, usuarioActual);
         Notification.showNotification("REGISTRO CLIENTE", "Con éxito", 4, NotificationType.SUCCESS);
         refrescarTabla();
         limpiarCampos();
@@ -219,7 +227,7 @@ public class CustomerController implements Initializable, UserAware {
     private void eliminar() {
         Customer seleccionado = tablaDatos.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
-            customerDao.delete(seleccionado.getId(),usuarioActual);
+            customerDao.delete(seleccionado.getId(), usuarioActual);
             refrescarTabla();
             limpiarCampos();
 
@@ -259,18 +267,25 @@ public class CustomerController implements Initializable, UserAware {
         if (txtApellidos.getText().trim().isEmpty()) {
             return "El apellido es obligatorio";
         }
+        if (txtTelefono.getText().trim().isEmpty()) {
+            return "El teléfono es obligatorio";
+        }
+
+        if (!txtTelefono.getText().matches("\\d+")) {
+            return "El teléfono solo debe contener números";
+        }
+
+        if (txtDireccion.getText().trim().isEmpty()) {
+            return "La dirección es obligatoria";
+        }
+
         if (txtEmail.getText().trim().isEmpty()) {
             return "El correo es obligatorio";
         }
         if (!Validator.isValidEmail(txtEmail.getText())) {
             return "El correo no es válido";
         }
-        if (txtTelefono.getText().trim().isEmpty()) {
-            return "El teléfono es obligatorio";
-        }
-        if (txtDireccion.getText().trim().isEmpty()) {
-            return "La dirección es obligatoria";
-        }
+
         return null;
     }
 
@@ -313,7 +328,7 @@ public class CustomerController implements Initializable, UserAware {
                 }
         );
     }
-    
+
     private User usuarioActual;
 
     @Override

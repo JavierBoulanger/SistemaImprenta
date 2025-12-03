@@ -22,30 +22,47 @@ public class PaymentDao {
     public List<Payment> listarPagos() {
         List<Payment> lista = new ArrayList<>();
         String sql = """
-                        SELECT p.id_pago, p.id_pedido, p.id_metodo_pago, p.id_estado_pago, 
-                               p.monto, p.fecha_pago,
-                               c.nombres AS cliente
-                        FROM Pago p
-                        INNER JOIN Pedido pe ON pe.id_pedido = p.id_pedido
-                        INNER JOIN Cliente c ON c.id_cliente = pe.id_cliente
-                        ORDER BY p.fecha_pago DESC
-                    """;
+                    SELECT p.id_pago, p.id_pedido, p.id_metodo_pago, p.id_estado_pago, 
+                           p.monto, p.fecha_pago,
+                           c.id_cliente,
+                           c.nombres AS clienteNom,
+                           c.apellidos As clienteAp 
+                    FROM Pago p
+                    INNER JOIN Pedido pe ON pe.id_pedido = p.id_pedido
+                    INNER JOIN Cliente c ON c.id_cliente = pe.id_cliente
+                    ORDER BY p.fecha_pago DESC
+                """;
 
         try (Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
 
             log.info("Ejecutando consulta listarPagos...");
 
             while (rs.next()) {
+
+                Customer cliente = new Customer();
+                cliente.setId(rs.getInt("id_cliente"));
+                cliente.setName(rs.getString("clienteNom"));
+                cliente.setLastName(rs.getString("clienteAp"));
+
+                Order pedido = new Order();
+                pedido.setId(rs.getInt("id_pedido"));
+                pedido.setCustomer(cliente);
+                List<OrderDetail> detalles = obtenerDetallesPorPedido(pedido.getId());
+                pedido.setDetails(detalles);
+
                 Payment pago = new Payment();
                 pago.setId(rs.getInt("id_pago"));
+                pago.setOrder(pedido);
                 pago.setMetodoPago(PaymentMethod.fromId(rs.getInt("id_metodo_pago")));
                 pago.setEstadoPago(PaymentStatus.fromId(rs.getInt("id_estado_pago")));
                 pago.setMonto(rs.getDouble("monto"));
                 pago.setFechaPago(rs.getTimestamp("fecha_pago").toLocalDateTime());
+
                 lista.add(pago);
             }
 
             log.info("Pagos listados correctamente: {}", lista.size());
+
         } catch (SQLException e) {
             log.error("Error al listar pagos", e);
         }
@@ -176,6 +193,74 @@ public class PaymentDao {
             log.error("Error al anular pago ID={}", idPago, e);
             return false;
         }
+    }
+
+    public List<OrderDetail> obtenerDetallesPorPedido(int idPedido) {
+        List<OrderDetail> detalles = new ArrayList<>();
+
+        String sql = """
+        SELECT  d.id_detalle_pedido,
+                d.cantidad,
+                d.precioUnitario,
+                d.subtotal,
+                p.id_producto,
+                p.nombre AS producto
+        FROM DetallePedido d
+        INNER JOIN Producto p ON p.id_producto = d.id_producto
+        WHERE d.id_pedido = ?
+    """;
+
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, idPedido);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Product producto = new Product();
+                producto.setId(rs.getInt("id_producto"));
+                producto.setName(rs.getString("producto"));
+
+                OrderDetail det = new OrderDetail();
+                det.setId(rs.getInt("id_detalle_pedido"));
+                det.setProduct(producto);
+                det.setQuantity(rs.getInt("cantidad"));
+                det.setUnitPrice(rs.getDouble("precioUnitario"));
+                det.setSubtotal(rs.getDouble("subtotal"));
+
+                detalles.add(det);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return detalles;
+    }
+
+    public int contarPagosPendientesReales() {
+        String sql = """
+        SELECT 
+            -- Pedidos SIN ningún pago
+            (SELECT COUNT(*) FROM Pedido pe 
+             WHERE pe.id_pedido NOT IN (SELECT pa.id_pedido FROM Pago pa)) 
+            +
+            -- Pagos registrados con estado PENDIENTE
+            (SELECT COUNT(*) FROM Pago WHERE id_estado_pago = 1)
+            AS totalPendientes;
+    """;
+
+        try (Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
+
+            if (rs.next()) {
+                int total = rs.getInt("totalPendientes");
+                log.info("Total pendientes (reales): {}", total);
+                return total;
+            }
+
+        } catch (SQLException e) {
+            log.error("Error al contar pagos pendientes reales", e);
+        }
+
+        return 0;
     }
 
 }

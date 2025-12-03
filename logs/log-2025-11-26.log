@@ -1,0 +1,546 @@
+[26-11-2025 22:32:15] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:32:15] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:32:46] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.configurarBotones(OrderController.java:219)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:161)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:32:57] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.configurarBotones(OrderController.java:219)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:161)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:33:00] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 22:33:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 22:33:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 22:33:00] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 22:33:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 22:33:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 22:33:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 22:33:02] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.configurarBotones(OrderController.java:219)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:161)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:33:59] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:33:59] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:34:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:34:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:34:12] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 22:34:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 22:34:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 22:34:12] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 22:34:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 22:34:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 22:34:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:35:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:39] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 22:35:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 22:35:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 22:35:39] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 22:35:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 22:35:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 22:35:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 22:35:55] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 22:35:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 22:35:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 22:35:55] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 22:35:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 22:35:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 22:35:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:35:57] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:36:01] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al eliminar pedido
+com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK_Pago_Pedido". The conflict occurred in database "IMPRENTA", table "dbo.Pago", column 'id_pedido'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.delete(OrderDao.java:247)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.eliminarPedido(OrderController.java:337)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.lambda$configurarBotones$16(OrderController.java:225)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[26-11-2025 22:36:03] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al eliminar pedido
+com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK_Pago_Pedido". The conflict occurred in database "IMPRENTA", table "dbo.Pago", column 'id_pedido'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.delete(OrderDao.java:247)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.eliminarPedido(OrderController.java:337)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.lambda$configurarBotones$16(OrderController.java:225)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[26-11-2025 22:37:02] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:37:03] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:37:04] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:166)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:37:57] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:37:57] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:37:59] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:166)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:38:04] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/OrderPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/OrderPane.fxml
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2670)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:123)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.NullPointerException: Cannot invoke "pe.edu.utp.sistemaimprenta.model.User.getType()" because "this.usuarioActual" is null
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:166)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	... 30 common frames omitted
+[26-11-2025 22:41:46] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:41:46] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:41:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:41:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:41:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:41:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:41:49] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:41:49] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:43:03] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:43:03] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:44:19] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:44:20] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:51:20] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:51:20] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 22:51:32] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó cliente CLI-5]
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 22:51:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 22:51:40] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 22:51:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 22:51:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 22:51:40] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 22:51:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 22:51:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 22:51:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 22:53:49] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 22:53:50] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 23:07:41] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[26-11-2025 23:07:41] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 23:07:43] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:07:43] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:08:11] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:08:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:08:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:08:11] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:08:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:08:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:08:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:08:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:41] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo usuario: Vendedor]
+[26-11-2025 23:08:44] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[26-11-2025 23:08:50] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:08:54] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:08:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:08:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:08:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:08:59] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:08:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:08:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:08:59] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:08:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:08:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:08:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:01] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:09:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:01] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:09:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:09:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:09:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:04] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:09:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:04] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:09:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:09:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:09:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:09:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:06] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:06] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:07] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:09:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:07] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:09:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:09:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:09:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[26-11-2025 23:09:09] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 300.0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[26-11-2025 23:09:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[26-11-2025 23:09:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[26-11-2025 23:09:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2

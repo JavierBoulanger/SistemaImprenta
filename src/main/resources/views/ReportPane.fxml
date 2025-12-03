@@ -2,16 +2,9 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="600" prefWidth="1050" styleClass="reportes-root" stylesheets="@css/styleReport.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pe.edu.utp.sistemaimprenta.controller.ReportController">
 
@@ -68,20 +61,20 @@
             <padding>
                 <Insets bottom="20" left="20" right="20" top="10"/>
             </padding>
-            
+
             <VBox fx:id="mainContainer" spacing="10" styleClass="contenedor-reportes">
 
-                <TitledPane fx:id="paneClientes" animated="true" text="Reporte de Clientes">
+                <TitledPane fx:id="paneClientes" animated="true" text="Reporte de Clientes" expanded="false">
                     <VBox spacing="15">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
-                        
+
                         <HBox spacing="10" alignment="CENTER_LEFT">
                             <Label text="Rango:" style="-fx-font-weight: bold;"/>
-                            <DatePicker fx:id="fechaInicio" promptText="Desde" />
-                            <DatePicker fx:id="fechaFin" promptText="Hasta" />
-                            <Button fx:id="btnFiltrar" text="Aplicar Filtros" styleClass="btn-action"/>
+                            <DatePicker fx:id="fechaInicioClientes" promptText="Desde" />
+                            <DatePicker fx:id="fechaFinClientes" promptText="Hasta" />
+                            <Button fx:id="btnFiltrarClientes" text="Aplicar Filtros" styleClass="btn-action"/>
                         </HBox>
 
                         <VBox fx:id="contenedorGraficosClientes" spacing="30" />
@@ -92,61 +85,90 @@
                     </VBox>
                 </TitledPane>
 
-                <TitledPane fx:id="paneUsuarios" animated="true" expanded="false" text="Reporte de Usuarios del Sistema">
+                <TitledPane fx:id="paneUsuarios" animated="true" text="Reporte de Usuarios del Sistema" expanded="false">
                     <VBox spacing="15">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Rango:" style="-fx-font-weight: bold;"/>
+                            <DatePicker fx:id="fechaInicioUsuarios" promptText="Desde" />
+                            <DatePicker fx:id="fechaFinUsuarios" promptText="Hasta" />
+                            <Button fx:id="btnFiltrarUsuarios" text="Aplicar Filtros" styleClass="btn-action"/>
+                        </HBox>
+
                         <VBox fx:id="contenedorGraficosUsuarios" spacing="30" />
 
-                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <HBox alignment="CENTER_RIGHT">
                             <Button fx:id="btnPdfUsuarios" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
                         </HBox>
                     </VBox>
                 </TitledPane>
 
-                <TitledPane fx:id="panePedidos" animated="true" expanded="false" text="Reporte de Pedidos">
+                <TitledPane fx:id="panePedidos" animated="true" text="Reporte de Pedidos" expanded="false">
                     <VBox spacing="15">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Rango:" style="-fx-font-weight: bold;"/>
+                            <DatePicker fx:id="fechaInicioPedidos" promptText="Desde" />
+                            <DatePicker fx:id="fechaFinPedidos" promptText="Hasta" />
+                            <Button fx:id="btnFiltrarPedidos" text="Aplicar Filtros" styleClass="btn-action"/>
+                        </HBox>
+
                         <VBox fx:id="contenedorGraficosPedidos" spacing="30" />
 
-                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <HBox alignment="CENTER_RIGHT">
                             <Button fx:id="btnPdfPedidos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
                         </HBox>
                     </VBox>
                 </TitledPane>
-                
-                <TitledPane fx:id="paneProductos" animated="true" expanded="false" text="Reporte de Productos">
+
+                <TitledPane fx:id="paneProductos" animated="true" text="Reporte de Productos" expanded="false">
                     <VBox spacing="15">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Rango:" style="-fx-font-weight: bold;"/>
+                            <DatePicker fx:id="fechaInicioProductos" promptText="Desde" />
+                            <DatePicker fx:id="fechaFinProductos" promptText="Hasta" />
+                            <Button fx:id="btnFiltrarProductos" text="Aplicar Filtros" styleClass="btn-action"/>
+                        </HBox>
+
                         <VBox fx:id="contenedorGraficosProductos" spacing="30" />
 
-                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <HBox alignment="CENTER_RIGHT">
                             <Button fx:id="btnPdfProductos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
                         </HBox>
                     </VBox>
                 </TitledPane>
 
-                <TitledPane fx:id="panePagos" animated="true" expanded="false" text="Reporte de Pagos">
+                <TitledPane fx:id="panePagos" animated="true" text="Reporte de Pagos" expanded="false">
                     <VBox spacing="15">
                         <padding>
                             <Insets bottom="15" left="15" right="15" top="15" />
                         </padding>
 
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Label text="Rango:" style="-fx-font-weight: bold;"/>
+                            <DatePicker fx:id="fechaInicioPagos" promptText="Desde" />
+                            <DatePicker fx:id="fechaFinPagos" promptText="Hasta" />
+                            <Button fx:id="btnFiltrarPagos" text="Aplicar Filtros" styleClass="btn-action"/>
+                        </HBox>
+
                         <VBox fx:id="contenedorGraficosPagos" spacing="30" />
 
-                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <HBox alignment="CENTER_RIGHT">
                             <Button fx:id="btnPdfPagos" text="Exportar PDF" styleClass="export-btn, pdf-btn"/>
                         </HBox>
                     </VBox>
                 </TitledPane>
+
             </VBox>
         </ScrollPane>
     </VBox>

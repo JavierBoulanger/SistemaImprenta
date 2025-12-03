@@ -1,0 +1,1577 @@
+[01-12-2025 11:10:29] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:10:42] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:12:18] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: Testing 1 Prueba Test]
+[01-12-2025 11:12:18] [ERROR] [p.e.u.s.dao.CustomerDao] No se pudo guardar cliente en la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: String or binary data would be truncated in table 'IMPRENTA.dbo.Cliente', column 'telefono'. Truncated value: 'aaaaaaaaaaaaaaa'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.CustomerDao.save(CustomerDao.java:34)
+	at pe.edu.utp.sistemaimprenta.controller.CustomerController.registrar(CustomerController.java:193)
+	at pe.edu.utp.sistemaimprenta.controller.CustomerController.lambda$initialize$0(CustomerController.java:113)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:13:27] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: fdaadas Adasdasds]
+[01-12-2025 11:23:10] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:23:10] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:24:05] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: dasdasd Bdasd]
+[01-12-2025 11:24:33] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: Peter Bdasd]
+[01-12-2025 11:26:29] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo usuario: Pruebadsadasd]
+[01-12-2025 11:30:11] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:30:12] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:30:55] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/UsersPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/UsersPane.fxml:15
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:922)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.ClassNotFoundException: pe.edu.utp.sistemaimprenta.controller.AdminUserController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:920)
+	... 35 common frames omitted
+[01-12-2025 11:30:59] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/UsersPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/UsersPane.fxml:15
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:922)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.ClassNotFoundException: pe.edu.utp.sistemaimprenta.controller.AdminUserController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:920)
+	... 35 common frames omitted
+[01-12-2025 11:31:02] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/UsersPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/UsersPane.fxml:15
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:922)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.ClassNotFoundException: pe.edu.utp.sistemaimprenta.controller.AdminUserController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:920)
+	... 35 common frames omitted
+[01-12-2025 11:31:05] [ERROR] [p.e.u.s.util.ViewLoader] Error al cambiar panel con controlador "/views/UsersPane.fxml"
+javafx.fxml.LoadException: 
+/C:/Users/javie/OneDrive/Documentos/NetBeansProjects/SistemaImprenta/target/classes/views/UsersPane.fxml:15
+
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.constructLoadException(FXMLLoader.java:2692)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:922)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$InstanceDeclarationElement.processAttribute(FXMLLoader.java:970)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$Element.processStartElement(FXMLLoader.java:217)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processStartElement(FXMLLoader.java:744)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.processStartElement(FXMLLoader.java:2823)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2619)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.lang.ClassNotFoundException: pe.edu.utp.sistemaimprenta.controller.AdminUserController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader$ValueElement.processAttribute(FXMLLoader.java:920)
+	... 35 common frames omitted
+[01-12-2025 11:31:50] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:31:51] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:43:46] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:43:46] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:44:50] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Actualizó el usuario USU-2]
+[01-12-2025 11:44:54] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 11:44:59] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:45:28] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo producto: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+[01-12-2025 11:48:15] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:48:16] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:48:22] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 11:48:27] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:48:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:48:59] [ERROR] [p.e.u.sistemaimprenta.dao.ProductDao] No se pudo registrar producto en la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: Arithmetic overflow error converting float to data type numeric.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.ProductDao.save(ProductDao.java:62)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.registrarProducto(ProductController.java:152)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.lambda$configurarEventos$10(ProductController.java:133)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:49:01] [ERROR] [p.e.u.sistemaimprenta.dao.ProductDao] No se pudo registrar producto en la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: Arithmetic overflow error converting float to data type numeric.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.ProductDao.save(ProductDao.java:62)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.registrarProducto(ProductController.java:152)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.lambda$configurarEventos$10(ProductController.java:133)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:49:02] [ERROR] [p.e.u.sistemaimprenta.dao.ProductDao] No se pudo registrar producto en la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: Arithmetic overflow error converting float to data type numeric.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.ProductDao.save(ProductDao.java:62)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.registrarProducto(ProductController.java:152)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.lambda$configurarEventos$10(ProductController.java:133)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:49:07] [ERROR] [p.e.u.sistemaimprenta.dao.ProductDao] No se pudo registrar producto en la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: Arithmetic overflow error converting float to data type numeric.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.ProductDao.save(ProductDao.java:62)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.registrarProducto(ProductController.java:152)
+	at pe.edu.utp.sistemaimprenta.controller.ProductController.lambda$configurarEventos$10(ProductController.java:133)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:49:12] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo producto: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+[01-12-2025 11:49:35] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Actualizó el producto PRO-1011]
+[01-12-2025 11:49:55] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó el producto PRO-1011]
+[01-12-2025 11:49:59] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó cliente CLI-1007]
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:50:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:51:05] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 11:51:10] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:52:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:52:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:52:40] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al eliminar pedido
+com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK_Pago_Pedido". The conflict occurred in database "IMPRENTA", table "dbo.Pago", column 'id_pedido'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:549)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.delete(OrderDao.java:254)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.eliminarPedido(OrderController.java:341)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.lambda$configurarBotones$16(OrderController.java:229)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Node.fireEvent(Node.java:9005)
+	at javafx.controls@24/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@24/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@24/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4005)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:56:46] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 11:56:46] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 11:56:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:56:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:56:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:56:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:56:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:56:48] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:57:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:58:21] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 11:58:21] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 11:58:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 2
+[01-12-2025 11:58:22] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 2
+[01-12-2025 11:58:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[01-12-2025 11:58:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 11:58:22] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 11:58:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:15] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:00:15] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:00:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:01:55] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:01:55] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:02:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:05:14] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:05:14] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:05:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:06:04] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-2005]
+[01-12-2025 12:06:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:06:04] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:06] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:10:06] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:10:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:11:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:11:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:11:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:11:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 0.0
+[01-12-2025 12:11:16] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2005 por S/ 90.0]
+[01-12-2025 12:11:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2005, Monto=90.0, Estado=PAGADO
+[01-12-2025 12:11:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:11:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:11:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:14:27] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:14:27] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:14:29] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al listar pedidos
+com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near 'u'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:131)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:386)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:162)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 12:14:34] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al listar pedidos
+com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near 'u'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:131)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:386)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:162)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 12:14:36] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al listar pedidos
+com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near 'u'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:131)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.refrescarTabla(OrderController.java:386)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.initialize(OrderController.java:162)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2640)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:2533)
+	at javafx.fxml@24/javafx.fxml.FXMLLoader.load(FXMLLoader.java:2503)
+	at pe.edu.utp.sistemaimprenta.util.ViewLoader.changeMainPanelGetController(ViewLoader.java:95)
+	at pe.edu.utp.sistemaimprenta.controller.DashboardController.lambda$createSidebarItem$0(DashboardController.java:121)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 12:14:39] [ERROR] [p.e.utp.sistemaimprenta.dao.OrderDao] Error al listar pedidos
+com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near 'u'.
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:276)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1787)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:688)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:607)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7745)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4700)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:321)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:253)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:521)
+	at pe.edu.utp.sistemaimprenta.dao.OrderDao.findAll(OrderDao.java:131)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.buscarPedido(OrderController.java:395)
+	at pe.edu.utp.sistemaimprenta.controller.OrderController.lambda$configurarBotones$13(OrderController.java:261)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@24/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@24/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@24/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@24/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@24/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@24/javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3709)
+	at javafx.graphics@24/javafx.scene.Scene$MouseHandler.process(Scene.java:4014)
+	at javafx.graphics@24/javafx.scene.Scene.processMouseEvent(Scene.java:1934)
+	at javafx.graphics@24/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2763)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:352)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:254)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@24/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:386)
+	at javafx.graphics@24/com.sun.glass.ui.View.handleMouseEvent(View.java:560)
+	at javafx.graphics@24/com.sun.glass.ui.View.notifyMouse(View.java:946)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@24/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+[01-12-2025 12:15:37] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:15:37] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:15:46] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:15:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:15:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:15:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:16:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:16:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:16:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:18:40] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:18:40] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:18:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:18:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:18:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:18:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:19:48] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:19:49] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:19:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:20:50] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:20:54] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:21:01] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:21:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:03] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-2006]
+[01-12-2025 12:22:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:09] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 3
+[01-12-2025 12:22:10] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 3
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 90.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 3
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:22:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:22:32] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-2007]
+[01-12-2025 12:22:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:22:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:28:02] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:28:02] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:28:04] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:28:10] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:28:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:28:54] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-2008]
+[01-12-2025 12:28:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2008: S/ 0.0
+[01-12-2025 12:28:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2008: S/ 0.0
+[01-12-2025 12:29:00] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó el pedido PED-2008]
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:29:47] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2006 por S/ 30.0]
+[01-12-2025 12:29:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2006, Monto=30.0, Estado=PAGADO
+[01-12-2025 12:29:47] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:29:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:29:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:30:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 4
+[01-12-2025 12:30:01] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:30:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:30:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 4
+[01-12-2025 12:30:01] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 4
+[01-12-2025 12:30:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 120.0
+[01-12-2025 12:30:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:30:01] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 4
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:30:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:30:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:30:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:36:57] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:36:58] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:19] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:37:23] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:25] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:37:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:31] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 0.0
+[01-12-2025 12:37:42] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2006 por S/ 14.0]
+[01-12-2025 12:37:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2006, Monto=14.0, Estado=PARCIAL
+[01-12-2025 12:37:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 14.0
+[01-12-2025 12:37:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 14.0
+[01-12-2025 12:37:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 14.0
+[01-12-2025 12:38:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 14.0
+[01-12-2025 12:38:00] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2006 por S/ 16.0]
+[01-12-2025 12:38:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2006, Monto=16.0, Estado=PAGADO
+[01-12-2025 12:38:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[01-12-2025 12:38:14] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 106.0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:38:14] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 4
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:15] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 0.0
+[01-12-2025 12:38:23] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2007 por S/ 90.0]
+[01-12-2025 12:38:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2007, Monto=90.0, Estado=PAGADO
+[01-12-2025 12:38:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:38:29] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:39:25] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:39:25] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:39:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:39:37] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-2009]
+[01-12-2025 12:39:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:39:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:39:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:39:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:39:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:40:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:40:05] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró pago por Pedido 2009 por S/ 90.0]
+[01-12-2025 12:40:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pago registrado: Pedido=2009, Monto=90.0, Estado=PAGADO
+[01-12-2025 12:40:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 90.0
+[01-12-2025 12:40:20] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:40:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 90.0
+[01-12-2025 12:47:05] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:47:05] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:47:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2009: S/ 0.0
+[01-12-2025 12:47:34] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó el pedido PED-2009]
+[01-12-2025 12:47:38] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:47:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:47:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 12:47:38] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 6
+[01-12-2025 12:47:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 196.0
+[01-12-2025 12:47:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:47:38] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 5
+[01-12-2025 12:47:41] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 5 pagos con estado PAGADO
+[01-12-2025 12:47:41] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 0 pagos con estado PENDIENTE
+[01-12-2025 12:47:42] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 5 pagos con estado PAGADO
+[01-12-2025 12:47:44] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 0 pagos con estado PENDIENTE
+[01-12-2025 12:47:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:47:59] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 12:48:00] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:48:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:48:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 12:48:00] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 6
+[01-12-2025 12:48:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 196.0
+[01-12-2025 12:48:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:48:00] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 5
+[01-12-2025 12:48:21] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:48:21] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:24] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:32] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:48:34] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:48:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:48:55] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:49:00] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[01-12-2025 12:49:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[01-12-2025 12:49:16] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:49:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:49:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 12:49:16] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 6
+[01-12-2025 12:49:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 196.0
+[01-12-2025 12:49:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:49:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 5
+[01-12-2025 12:49:28] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:49:31] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:49:51] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:49:55] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:50:16] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:50:16] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:55:28] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 12:55:28] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:55:41] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:55:45] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:55:56] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[01-12-2025 12:56:01] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 12:56:42] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 12:56:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 12:56:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 12:56:42] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 6
+[01-12-2025 12:56:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 196.0
+[01-12-2025 12:56:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 12:56:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 5
+[01-12-2025 13:02:43] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[01-12-2025 13:02:44] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[01-12-2025 13:02:45] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[01-12-2025 13:02:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 13:02:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6
+[01-12-2025 13:02:45] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 6
+[01-12-2025 13:02:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 196.0
+[01-12-2025 13:02:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pendiente: 0
+[01-12-2025 13:02:45] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 5
+[01-12-2025 13:03:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[01-12-2025 13:03:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 6

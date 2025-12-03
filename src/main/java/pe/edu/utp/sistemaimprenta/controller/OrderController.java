@@ -25,9 +25,6 @@ import javafx.stage.Stage;
 public class OrderController implements Initializable, UserAware {
 
     @FXML
-    private Button btnActualizar;
-
-    @FXML
     private Button btnAgregar;
 
     @FXML
@@ -112,10 +109,8 @@ public class OrderController implements Initializable, UserAware {
     private TableColumn<OrderDetail, Double> colPrecioDetalle;
     @FXML
     private TableColumn<OrderDetail, Double> colSubtotalDetalle;
-
     @FXML
     private TableColumn<Order, String> colEstadoPago;
-
     @FXML
     private Pane panePago;
     @FXML
@@ -136,7 +131,6 @@ public class OrderController implements Initializable, UserAware {
     private Button btnGuardarPago;
     @FXML
     private Button btnCancelarPago;
-
     @FXML
     private Button btnRegistrarPago;
 
@@ -169,24 +163,52 @@ public class OrderController implements Initializable, UserAware {
         this.usuarioActual = user;
 
         if (this.usuarioActual != null) {
-            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) 
+            if (this.usuarioActual.getType().equals(UserType.ADMINISTRADOR)) {
                 btnAgregar.setVisible(false);
+                btnEliminar.setVisible(false);
+                btnRegistrarPago.setVisible(false);
+            }
         }
     }
 
     private void configurarTabla() {
         colId.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getId()).asObject());
-        colVendedor.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getUser().getUsername()));
-        colCliente.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getCustomer().getName()));
-        colEstado.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getState().name()));
+        colVendedor.setCellValueFactory(data -> {
+            String username = "";
+            if (data.getValue().getUser() != null && data.getValue().getUser().getUsername() != null) {
+                username = data.getValue().getUser().getUsername();
+            }
+            return new javafx.beans.property.SimpleStringProperty(username);
+        });
+
+        colCliente.setCellValueFactory(data -> {
+            Customer c = data.getValue().getCustomer();
+            return new javafx.beans.property.SimpleStringProperty(
+                    c.getLastName() + " " + c.getName()
+            );
+        });
+
+        colEstado.setCellValueFactory(data -> {
+            OrderState s = data.getValue().getState();
+            return new javafx.beans.property.SimpleStringProperty(s != null ? s.name() : "");
+        });
+
         colFechaEntrega.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(
                 data.getValue().getDeliveryDate() != null ? data.getValue().getDeliveryDate().toLocalDate().toString() : ""));
+
         colFechaRegistro.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(
                 data.getValue().getCreatedAt() != null ? data.getValue().getCreatedAt().toLocalDate().toString() : ""));
+
         colTotal.setCellValueFactory(data -> new javafx.beans.property.SimpleDoubleProperty(data.getValue().getTotalAmount()).asObject());
+
         colEstadoPago.setCellValueFactory(data -> {
             Order pedido = data.getValue();
-            double totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedido.getId());
+            double totalPagado = 0;
+            try {
+                totalPagado = paymentDAO.obtenerTotalPagadoPorPedido(pedido.getId());
+            } catch (Exception ex) {
+                totalPagado = 0;
+            }
             double totalPedido = pedido.getTotalAmount();
 
             String estado;
@@ -200,6 +222,13 @@ public class OrderController implements Initializable, UserAware {
 
             return new javafx.beans.property.SimpleStringProperty(estado);
         });
+
+        if (listaPedidos != null) {
+            tablaDatos.setItems(listaPedidos);
+        } else {
+            listaPedidos = FXCollections.observableArrayList();
+            tablaDatos.setItems(listaPedidos);
+        }
     }
 
     private void configurarDetalle() {
@@ -221,14 +250,15 @@ public class OrderController implements Initializable, UserAware {
     }
 
     private void configurarBotones() {
-
         btnVerBoleta.setOnAction(e -> mostrarBoleta());
         btnBuscar.setOnMouseClicked(e -> buscarPedido());
-        btnActualizar.setOnAction(e -> refrescarTabla());
         btnAgregar.setOnAction(e -> paneNuevoPedido.setVisible(true));
         btnEliminar.setOnAction(e -> eliminarPedido());
         btnGuardarPedido.setOnAction(e -> registrarPedido());
-        btnCancelarPedido.setOnAction(e -> paneNuevoPedido.setVisible(false));
+        btnCancelarPedido.setOnAction(e -> {
+            limpiarFormularioPedido();
+            paneNuevoPedido.setVisible(false);
+        });
         btnAgregarDetalle.setOnAction(e -> agregarDetalle());
         btnQuitarDetalle.setOnAction(e -> quitarDetalle());
         btnGuardarPago.setOnAction(e -> registrarPago());
@@ -320,7 +350,7 @@ public class OrderController implements Initializable, UserAware {
                 Notification.showNotification("PEDIDO", "Pedido registrado con éxito", 4, NotificationType.SUCCESS);
                 paneNuevoPedido.setVisible(false);
                 refrescarTabla();
-                detalles.clear();
+                limpiarFormularioPedido();
                 actualizarTotal();
             } else {
                 Message.showMessage(lblErrorDetalle, "Error al registrar pedido", "red");
@@ -329,6 +359,21 @@ public class OrderController implements Initializable, UserAware {
         } catch (Exception e) {
             Message.showMessage(lblErrorDetalle, "Error: " + e.getMessage(), "red");
         }
+    }
+
+    private void limpiarFormularioPedido() {
+        cmbCliente.getSelectionModel().clearSelection();
+        cmbEstado.getSelectionModel().clearSelection();
+        cmbProducto.getSelectionModel().clearSelection();
+
+        dateEntrega.setValue(null);
+        txtCantidad.clear();
+
+        detalles.clear();
+        tablaDetalle.refresh();
+
+        lblTotal.setText("0.00");
+        lblErrorDetalle.setText("");
     }
 
     private void eliminarPedido() {
@@ -354,27 +399,34 @@ public class OrderController implements Initializable, UserAware {
     }
 
     private void buscarPedido() {
-        String texto = txtBuscar.getText().trim().toLowerCase();
+        String texto = txtBuscar.getText().toLowerCase().trim();
+        String filtro = cmbFiltro.getValue();
+
+        List<Order> pedidos = orderDao.findAll();
+
         if (texto.isEmpty()) {
-            refrescarTabla();
+            listaPedidos.setAll(pedidos);
             return;
         }
 
-        String filtro = cmbFiltro.getValue();
-        List<Order> pedidos = orderDao.findAll();
+        List<Order> filtrados = pedidos.stream().filter(p -> {
+            return switch (filtro) {
+                case "Cliente" ->
+                    p.getCustomer().getName().toLowerCase().contains(texto)
+                    || p.getCustomer().getLastName().toLowerCase().contains(texto);
 
-        listaPedidos.setAll(pedidos.stream().filter(p -> {
-            switch (filtro) {
-                case "Cliente":
-                    return p.getCustomer().getName().toLowerCase().contains(texto);
-                case "Vendedor":
-                    return p.getUser().getUsername().toLowerCase().contains(texto);
-                case "Estado":
-                    return p.getState().name().toLowerCase().contains(texto);
-                default:
-                    return false;
-            }
-        }).toList());
+                case "Vendedor" ->
+                    p.getUser().getUsername().toLowerCase().contains(texto);
+
+                case "Estado" ->
+                    p.getState().name().toLowerCase().contains(texto);
+
+                default ->
+                    false;
+            };
+        }).toList();
+
+        listaPedidos.setAll(filtrados);
     }
 
     private void mostrarBoleta() {
@@ -525,5 +577,6 @@ public class OrderController implements Initializable, UserAware {
     private void limpiarFormulario() {
         txtMontoPago.clear();
         cmbMetodoPago.getSelectionModel().clearSelection();
+        lblErrorPago.setText("");
     }
 }

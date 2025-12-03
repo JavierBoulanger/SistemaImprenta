@@ -51,10 +51,14 @@ public class ConfigController implements Initializable {
 
         Map<String, String> keys = Map.ofEntries(
                 Map.entry("img.logo", "Logo del Sistema"),
-                Map.entry("img.iconClientes", "Ícono Clientes"),
-                Map.entry("img.iconPedidos", "Ícono Pedidos"),
-                Map.entry("img.iconProductos", "Ícono Productos"),
-                Map.entry("img.iconConfiguracion", "Ícono Configuración")
+                Map.entry("img.audit", "Ícono Auditoria"),
+                Map.entry("img.configuration", "Ícono Configuración"),
+                Map.entry("img.customers", "Ícono Clientes"),
+                Map.entry("img.users", "Ícono Usuarios"),
+                        Map.entry("img.orders", "Ícono Pedidos"),
+                        Map.entry("img.products", "Ícono Productos"),
+                Map.entry("img.reports", "Ícono Reportes"),
+                Map.entry("img.payments", "Ícono Pagos")
         );
 
         List<String> images = listImages(folder);

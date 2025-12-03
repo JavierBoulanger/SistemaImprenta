@@ -26,7 +26,7 @@ import pe.edu.utp.sistemaimprenta.util.NotificationType;
 import pe.edu.utp.sistemaimprenta.util.UserAware;
 import pe.edu.utp.sistemaimprenta.util.Validator;
 
-public class AdminUserController implements Initializable, UserAware {
+public class UserController implements Initializable, UserAware {
 
     @FXML
     private Button btnActualizar;
@@ -97,12 +97,14 @@ public class AdminUserController implements Initializable, UserAware {
     private ObservableList<User> listaUsuarios;
     private UserDao userDao;
 
-    public AdminUserController() {
+    public UserController() {
         userDao = new UserDao();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Validator.limitarCaracteres(txtNombre, 30);
+        Validator.limitarCaracteres(txtEmail, 30);
         btnRegistrar.setOnAction(e -> registrar());
         btnActualizar.setOnAction(e -> actualizar());
         btnEliminar.setOnAction(e -> eliminar());

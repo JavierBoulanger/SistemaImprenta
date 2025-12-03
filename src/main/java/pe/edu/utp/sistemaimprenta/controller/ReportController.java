@@ -9,29 +9,25 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TitledPane;
 import javafx.scene.image.WritableImage;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import pe.edu.utp.sistemaimprenta.dao.CustomerDao;
-import pe.edu.utp.sistemaimprenta.dao.OrderDao;
-import pe.edu.utp.sistemaimprenta.dao.UserDao;
-import pe.edu.utp.sistemaimprenta.dao.ProductDao;
-import pe.edu.utp.sistemaimprenta.dao.PaymentDao;
-import pe.edu.utp.sistemaimprenta.model.Customer;
-import pe.edu.utp.sistemaimprenta.model.Order;
-import pe.edu.utp.sistemaimprenta.model.User;
-import pe.edu.utp.sistemaimprenta.model.Payment;
+import pe.edu.utp.sistemaimprenta.dao.*;
+import pe.edu.utp.sistemaimprenta.model.*;
 import pe.edu.utp.sistemaimprenta.util.Notification;
 import pe.edu.utp.sistemaimprenta.util.NotificationType;
+
 import com.lowagie.text.Document;
 import com.lowagie.text.PageSize;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.FontFactory;
 import com.lowagie.text.Image;
-import com.lowagie.text.pdf.PdfWriter;
 import com.lowagie.text.Element;
+import com.lowagie.text.pdf.PdfWriter;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
@@ -54,31 +50,47 @@ public class ReportController implements Initializable {
     private VBox contenedorGraficosPagos;
 
     @FXML
-    private TitledPane paneClientes;
+    private DatePicker fechaInicioClientes;
     @FXML
-    private TitledPane paneUsuarios;
+    private DatePicker fechaFinClientes;
     @FXML
-    private TitledPane panePedidos;
-    @FXML
-    private TitledPane paneProductos;
-    @FXML
-    private TitledPane panePagos;
-
-    @FXML
-    private DatePicker fechaInicio;
-    @FXML
-    private DatePicker fechaFin;
-    @FXML
-    private Button btnFiltrar;
-
+    private Button btnFiltrarClientes;
     @FXML
     private Button btnPdfClientes;
+
+    @FXML
+    private DatePicker fechaInicioUsuarios;
+    @FXML
+    private DatePicker fechaFinUsuarios;
+    @FXML
+    private Button btnFiltrarUsuarios;
     @FXML
     private Button btnPdfUsuarios;
+
+    @FXML
+    private DatePicker fechaInicioPedidos;
+    @FXML
+    private DatePicker fechaFinPedidos;
+    @FXML
+    private Button btnFiltrarPedidos;
     @FXML
     private Button btnPdfPedidos;
+
+    @FXML
+    private DatePicker fechaInicioProductos;
+    @FXML
+    private DatePicker fechaFinProductos;
+    @FXML
+    private Button btnFiltrarProductos;
     @FXML
     private Button btnPdfProductos;
+
+    @FXML
+    private DatePicker fechaInicioPagos;
+    @FXML
+    private DatePicker fechaFinPagos;
+    @FXML
+    private Button btnFiltrarPagos;
     @FXML
     private Button btnPdfPagos;
 
@@ -89,30 +101,55 @@ public class ReportController implements Initializable {
     @FXML
     private Label lblPedidosCompletados;
 
-    private final CustomerDao customerDao = new CustomerDao();
-    private final UserDao userDao = new UserDao();
-    private final OrderDao orderDao = new OrderDao();
-    private final PaymentDao paymentDao = new PaymentDao();
+    private CustomerDao customerDao = new CustomerDao();
+    private UserDao userDao = new UserDao();
+    private OrderDao orderDao = new OrderDao();
+    private PaymentDao paymentDao = new PaymentDao();
+    private ProductDao productDao = new ProductDao();
 
-    private List<Customer> clientesFiltrados;
+    private List<Customer> listaClientes;
     private List<Order> listaPedidos;
     private List<Payment> listaPagos;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        fechaInicio.setValue(LocalDate.now().minusMonths(6));
-        fechaFin.setValue(LocalDate.now());
 
-        btnFiltrar.setOnAction(e -> cargarReporteClientes());
-        btnPdfClientes.setOnAction(e -> exportarPdf(contenedorGraficosClientes, "Reporte de Clientes"));
+        inicializarFechas(fechaInicioClientes, fechaFinClientes);
+        inicializarFechas(fechaInicioUsuarios, fechaFinUsuarios);
+        inicializarFechas(fechaInicioPedidos, fechaFinPedidos);
+        inicializarFechas(fechaInicioProductos, fechaFinProductos);
+        inicializarFechas(fechaInicioPagos, fechaFinPagos);
 
-        btnPdfUsuarios.setOnAction(e -> exportarPdf(contenedorGraficosUsuarios, "Reporte de Usuarios"));
+        btnFiltrarClientes.setOnAction(e -> cargarReporteClientes());
+        btnFiltrarUsuarios.setOnAction(e -> cargarReporteUsuarios());
+        btnFiltrarPedidos.setOnAction(e -> cargarReportePedidos());
+        btnFiltrarProductos.setOnAction(e -> cargarReporteProductos());
+        btnFiltrarPagos.setOnAction(e -> cargarReportePagos());
 
-        btnPdfPedidos.setOnAction(e -> exportarPdf(contenedorGraficosPedidos, "Reporte de Pedidos"));
+        btnPdfClientes.setOnAction(e -> exportarPdf(
+                contenedorGraficosClientes, "Reporte de Clientes",
+                fechaInicioClientes.getValue(), fechaFinClientes.getValue()
+        ));
 
-        btnPdfProductos.setOnAction(e -> exportarPdf(contenedorGraficosProductos, "Reporte de Productos"));
+        btnPdfUsuarios.setOnAction(e -> exportarPdf(
+                contenedorGraficosUsuarios, "Reporte de Usuarios",
+                fechaInicioUsuarios.getValue(), fechaFinUsuarios.getValue()
+        ));
 
-        btnPdfPagos.setOnAction(e -> exportarPdf(contenedorGraficosPagos, "Reporte de Pagos"));
+        btnPdfPedidos.setOnAction(e -> exportarPdf(
+                contenedorGraficosPedidos, "Reporte de Pedidos",
+                fechaInicioPedidos.getValue(), fechaFinPedidos.getValue()
+        ));
+
+        btnPdfProductos.setOnAction(e -> exportarPdf(
+                contenedorGraficosProductos, "Reporte de Productos",
+                fechaInicioProductos.getValue(), fechaFinProductos.getValue()
+        ));
+
+        btnPdfPagos.setOnAction(e -> exportarPdf(
+                contenedorGraficosPagos, "Reporte de Pagos",
+                fechaInicioPagos.getValue(), fechaFinPagos.getValue()
+        ));
 
         cargarReporteClientes();
         cargarReporteUsuarios();
@@ -124,14 +161,12 @@ public class ReportController implements Initializable {
     }
 
     private void actualizarKpis() {
+
         lblClientesNuevos.setText(String.valueOf(customerDao.findAll().size()));
 
-        if (listaPedidos == null) {
-            listaPedidos = orderDao.findAll();
-        }
+        listaPedidos = orderDao.findAll();
 
-        long pedidosCompletados = listaPedidos.stream()
-                .count();
+        long pedidosCompletados = listaPedidos.size();
 
         double ventasTotales = listaPedidos.stream()
                 .mapToDouble(Order::getTotalAmount)
@@ -141,299 +176,306 @@ public class ReportController implements Initializable {
         lblVentasMensuales.setText(String.format("S/ %.2f", ventasTotales));
     }
 
-    //s1
-    private void cargarReporteClientes() {
-        clientesFiltrados = filtrarClientes();
-        contenedorGraficosClientes.getChildren().clear();
-
-        contenedorGraficosClientes.getChildren().add(crearGraficoClientesPorMes());
-        contenedorGraficosClientes.getChildren().add(crearGraficoClientesPorDia());
-        contenedorGraficosClientes.getChildren().add(crearGraficoCrecimientoAcumulado());
+    private void inicializarFechas(DatePicker inicio, DatePicker fin) {
+        inicio.setValue(LocalDate.now().minusMonths(3));
+        fin.setValue(LocalDate.now());
     }
 
-    private List<Customer> filtrarClientes() {
-        LocalDate ini = fechaInicio.getValue();
-        LocalDate fin = fechaFin.getValue();
-        List<Customer> todos = customerDao.findAll();
+    private void cargarReporteClientes() {
 
-        if (ini == null || fin == null) {
-            return todos;
-        }
+        LocalDate ini = fechaInicioClientes.getValue();
+        LocalDate fin = fechaFinClientes.getValue();
 
-        return todos.stream()
+        listaClientes = customerDao.findAll().stream()
                 .filter(c -> !c.getCreatedAt().toLocalDate().isBefore(ini)
                 && !c.getCreatedAt().toLocalDate().isAfter(fin))
                 .collect(Collectors.toList());
+
+        contenedorGraficosClientes.getChildren().clear();
+
+        contenedorGraficosClientes.getChildren().add(graficoClientesPorMes());
+        contenedorGraficosClientes.getChildren().add(graficoClientesPorDia());
+        contenedorGraficosClientes.getChildren().add(graficoCrecimientoAcumulado());
     }
 
-    private Chart crearGraficoClientesPorMes() {
+    private Chart graficoClientesPorMes() {
         CategoryAxis x = new CategoryAxis();
         NumberAxis y = new NumberAxis();
+
         BarChart<String, Number> chart = new BarChart<>(x, y);
         chart.setTitle("Clientes Registrados por Mes");
-        x.setLabel("Mes");
-        y.setLabel("Cantidad");
 
         XYChart.Series<String, Number> serie = new XYChart.Series<>();
         serie.setName("Registros");
 
-        clientesFiltrados.stream()
-                .collect(Collectors.groupingBy(c -> c.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")).toUpperCase(), Collectors.counting()))
-                .forEach((mes, cnt) -> serie.getData().add(new XYChart.Data<>(mes, cnt)));
+        listaClientes.stream()
+                .collect(Collectors.groupingBy(
+                        c -> c.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")),
+                        Collectors.counting()
+                ))
+                .forEach((mes, cnt) -> serie.getData().add(new XYChart.Data<>(mes.toUpperCase(), cnt)));
 
         chart.getData().add(serie);
         return chart;
     }
 
-    private Chart crearGraficoClientesPorDia() {
+    private Chart graficoClientesPorDia() {
         CategoryAxis x = new CategoryAxis();
         NumberAxis y = new NumberAxis();
         BarChart<String, Number> chart = new BarChart<>(x, y);
         chart.setTitle("Actividad de Registro Diario");
-        x.setLabel("Fecha");
-        y.setLabel("Nuevos Clientes");
 
         XYChart.Series<String, Number> serie = new XYChart.Series<>();
         serie.setName("Clientes");
 
-        clientesFiltrados.stream()
-                .collect(Collectors.groupingBy(c -> c.getCreatedAt().toLocalDate().toString(), Collectors.counting()))
+        listaClientes.stream()
+                .collect(Collectors.groupingBy(
+                        c -> c.getCreatedAt().toLocalDate().toString(),
+                        Collectors.counting()
+                ))
                 .forEach((dia, cnt) -> serie.getData().add(new XYChart.Data<>(dia, cnt)));
 
         chart.getData().add(serie);
         return chart;
     }
 
-    private Chart crearGraficoCrecimientoAcumulado() {
+    private Chart graficoCrecimientoAcumulado() {
         CategoryAxis x = new CategoryAxis();
         NumberAxis y = new NumberAxis();
         LineChart<String, Number> chart = new LineChart<>(x, y);
-        chart.setTitle("Crecimiento Acumulado de Cartera");
-        x.setLabel("Fecha");
-        y.setLabel("Total Clientes");
+        chart.setTitle("Crecimiento Acumulado");
 
         XYChart.Series<String, Number> serie = new XYChart.Series<>();
-        serie.setName("Tendencia");
+        serie.setName("Acumulado");
 
-        Map<String, Long> porDia = clientesFiltrados.stream()
-                .collect(Collectors.groupingBy(c -> c.getCreatedAt().toLocalDate().toString(), Collectors.counting()));
+        Map<String, Long> porDia = listaClientes.stream()
+                .collect(Collectors.groupingBy(
+                        c -> c.getCreatedAt().toLocalDate().toString(),
+                        Collectors.counting()
+                ));
 
-        List<String> fechasOrd = new ArrayList<>(porDia.keySet());
-        Collections.sort(fechasOrd);
+        List<String> fechas = new ArrayList<>(porDia.keySet());
+        Collections.sort(fechas);
 
         long acumulado = 0;
-        for (String f : fechasOrd) {
+        for (String f : fechas) {
             acumulado += porDia.get(f);
             serie.getData().add(new XYChart.Data<>(f, acumulado));
         }
+
         chart.getData().add(serie);
         return chart;
     }
 
-    //s2
     private void cargarReporteUsuarios() {
-        List<User> usuarios = userDao.findAll();
+
+        LocalDate ini = fechaInicioUsuarios.getValue();
+        LocalDate fin = fechaFinUsuarios.getValue();
+
+        List<User> usuariosFiltrados = userDao.findAll().stream()
+                .filter(u -> u.getCreatedAt() != null
+                && !u.getCreatedAt().toLocalDate().isBefore(ini)
+                && !u.getCreatedAt().toLocalDate().isAfter(fin))
+                .collect(Collectors.toList());
+
         contenedorGraficosUsuarios.getChildren().clear();
 
-        PieChart pieChart = new PieChart();
-        pieChart.setTitle("Distribución de Usuarios por Rol");
+        PieChart pie = new PieChart();
+        pie.setTitle("Usuarios por Rol");
 
-        usuarios.stream()
+        usuariosFiltrados.stream()
                 .collect(Collectors.groupingBy(User::getType, Collectors.counting()))
-                .forEach((tipo, count) -> {
-                    PieChart.Data data = new PieChart.Data(tipo.toString() + " (" + count + ")", count);
-                    pieChart.getData().add(data);
-                });
+                .forEach((rol, count)
+                        -> pie.getData().add(new PieChart.Data(rol + " (" + count + ")", count)));
 
-        contenedorGraficosUsuarios.getChildren().add(pieChart);
+        contenedorGraficosUsuarios.getChildren().add(pie);
     }
 
-    //s3
     private void cargarReportePedidos() {
+
+        LocalDate ini = fechaInicioPedidos.getValue();
+        LocalDate fin = fechaFinPedidos.getValue();
+
+        listaPedidos = orderDao.findAll().stream()
+                .filter(o -> !o.getCreatedAt().toLocalDate().isBefore(ini)
+                && !o.getCreatedAt().toLocalDate().isAfter(fin))
+                .collect(Collectors.toList());
+
         contenedorGraficosPedidos.getChildren().clear();
 
-        listaPedidos = orderDao.findAll();
-
         if (listaPedidos.isEmpty()) {
-            contenedorGraficosPedidos.getChildren().add(new Label("No hay pedidos registrados para generar reportes."));
+            contenedorGraficosPedidos.getChildren().add(new Label("No hay pedidos en este rango."));
             return;
         }
 
-        CategoryAxis xAxis = new CategoryAxis();
-        NumberAxis yAxis = new NumberAxis();
-        BarChart<String, Number> ventasChart = new BarChart<>(xAxis, yAxis);
-        ventasChart.setTitle("Ingresos por Ventas (Mensual)");
-        xAxis.setLabel("Mes");
-        yAxis.setLabel("Monto (S/)");
-
-        XYChart.Series<String, Number> serieVentas = new XYChart.Series<>();
-        serieVentas.setName("Total Facturado");
-
-        Map<String, Double> ventasPorMes = listaPedidos.stream()
+        Map<String, Double> ventas = listaPedidos.stream()
                 .collect(Collectors.groupingBy(
-                        o -> o.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")).toUpperCase(),
+                        o -> o.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, new Locale("es")),
                         Collectors.summingDouble(Order::getTotalAmount)
                 ));
 
-        ventasPorMes.forEach((mes, total)
-                -> serieVentas.getData().add(new XYChart.Data<>(mes, total))
-        );
+        CategoryAxis x = new CategoryAxis();
+        NumberAxis y = new NumberAxis();
 
-        ventasChart.getData().add(serieVentas);
-        contenedorGraficosPedidos.getChildren().add(ventasChart);
+        BarChart<String, Number> chart = new BarChart<>(x, y);
+        chart.setTitle("Ventas Mensuales");
 
-        PieChart estadoChart = new PieChart();
-        estadoChart.setTitle("Distribución de Estados de Pedidos");
+        XYChart.Series<String, Number> serie = new XYChart.Series<>();
 
-        Map<String, Long> conteoEstados = listaPedidos.stream()
+        ventas.forEach((mes, total)
+                -> serie.getData().add(new XYChart.Data<>(mes.toUpperCase(), total)));
+
+        chart.getData().add(serie);
+        contenedorGraficosPedidos.getChildren().add(chart);
+
+        PieChart estados = new PieChart();
+        estados.setTitle("Estados de Pedido");
+
+        listaPedidos.stream()
                 .collect(Collectors.groupingBy(
                         o -> o.getState() != null ? o.getState().toString() : "DESCONOCIDO",
                         Collectors.counting()
-                ));
+                ))
+                .forEach((est, cantidad)
+                        -> estados.getData().add(new PieChart.Data(est, cantidad)));
 
-        conteoEstados.forEach((estado, cantidad) -> {
-            PieChart.Data data = new PieChart.Data(estado + " (" + cantidad + ")", cantidad);
-            estadoChart.getData().add(data);
-        });
-
-        contenedorGraficosPedidos.getChildren().add(estadoChart);
+        contenedorGraficosPedidos.getChildren().add(estados);
     }
 
-    //s4
     private void cargarReporteProductos() {
+
+        LocalDate ini = fechaInicioProductos.getValue();
+        LocalDate fin = fechaFinProductos.getValue();
+        List<Object[]> productosVendidos = orderDao.findTopSellingProducts(ini, fin, 10);
         contenedorGraficosProductos.getChildren().clear();
 
-        List<Object[]> productosVendidos = orderDao.findTopSellingProducts(5);
-
         if (productosVendidos.isEmpty()) {
-            contenedorGraficosProductos.getChildren().add(new Label("No hay datos de ventas para generar reportes de productos."));
+            contenedorGraficosProductos.getChildren().add(new Label("No hay ventas en este rango."));
             return;
         }
 
         CategoryAxis x = new CategoryAxis();
         NumberAxis y = new NumberAxis();
+
         BarChart<String, Number> chart = new BarChart<>(x, y);
-        chart.setTitle("Top 5 Productos Más Vendidos (Por Unidades)");
-        x.setLabel("Producto");
-        y.setLabel("Unidades Vendidas");
+        chart.setTitle("Top 5 Productos Vendidos");
 
         XYChart.Series<String, Number> serie = new XYChart.Series<>();
-        serie.setName("Unidades");
 
-        for (Object[] data : productosVendidos) {
-            String nombreProducto = (String) data[0];
-            Long unidadesVendidas = (Long) data[1];
-            serie.getData().add(new XYChart.Data<>(nombreProducto, unidadesVendidas));
+        for (Object[] row : productosVendidos) {
+            String producto = (String) row[0];
+            long cantidad = ((Number) row[1]).longValue();
+            serie.getData().add(new XYChart.Data<>(producto, cantidad));
         }
 
         chart.getData().add(serie);
         contenedorGraficosProductos.getChildren().add(chart);
-
-        // Agregando gráfico de ingresos por categoría de producto
-        List<Object[]> ingresosPorTipo = orderDao.findIncomeByProductType();
-
-        if (!ingresosPorTipo.isEmpty()) {
-            PieChart pieChart = new PieChart();
-            pieChart.setTitle("Ingresos por Tipo de Producto");
-
-            for (Object[] data : ingresosPorTipo) {
-                String tipo = (String) data[0];
-                Double ingresos = (Double) data[1];
-                PieChart.Data pieData = new PieChart.Data(tipo + " (S/" + String.format("%.2f", ingresos) + ")", ingresos);
-                pieChart.getData().add(pieData);
-            }
-            contenedorGraficosProductos.getChildren().add(pieChart);
-        }
     }
 
-    //s5
     private void cargarReportePagos() {
+
+        LocalDate ini = fechaInicioPagos.getValue();
+        LocalDate fin = fechaFinPagos.getValue();
+
+        listaPagos = paymentDao.listarPagos().stream()
+                .filter(p -> !p.getFechaPago().toLocalDate().isBefore(ini)
+                && !p.getFechaPago().toLocalDate().isAfter(fin))
+                .collect(Collectors.toList());
+
         contenedorGraficosPagos.getChildren().clear();
 
-        listaPagos = paymentDao.listarPagos();
-
         if (listaPagos.isEmpty()) {
-            contenedorGraficosPagos.getChildren().add(new Label("No hay pagos registrados para generar reportes."));
+            contenedorGraficosPagos.getChildren().add(new Label("No hay pagos en este rango."));
             return;
         }
 
-        PieChart metodoPagoChart = new PieChart();
-        metodoPagoChart.setTitle("Métodos de Pago Utilizados");
+        // Métodos de pago
+        PieChart metodos = new PieChart();
+        metodos.setTitle("Métodos de Pago");
 
-        Map<String, Long> conteoMetodos = listaPagos.stream()
+        listaPagos.stream()
                 .collect(Collectors.groupingBy(
                         p -> p.getMetodoPago() != null ? p.getMetodoPago().getNombre() : "DESCONOCIDO",
                         Collectors.counting()
-                ));
+                ))
+                .forEach((m, cnt)
+                        -> metodos.getData().add(new PieChart.Data(m, cnt)));
 
-        conteoMetodos.forEach((metodo, cantidad) -> {
-            PieChart.Data data = new PieChart.Data(metodo + " (" + cantidad + ")", cantidad);
-            metodoPagoChart.getData().add(data);
-        });
+        contenedorGraficosPagos.getChildren().add(metodos);
 
-        contenedorGraficosPagos.getChildren().add(metodoPagoChart);
+        PieChart estados = new PieChart();
+        estados.setTitle("Estado del Pago");
 
-        PieChart estadoPagoChart = new PieChart();
-        estadoPagoChart.setTitle("Distribución de Pagos por Estado");
-
-        Map<String, Double> montosPorEstado = listaPagos.stream()
+        listaPagos.stream()
                 .collect(Collectors.groupingBy(
                         p -> p.getEstadoPago() != null ? p.getEstadoPago().getNombre() : "DESCONOCIDO",
                         Collectors.summingDouble(Payment::getMonto)
-                ));
+                ))
+                .forEach((e, total)
+                        -> estados.getData().add(new PieChart.Data(e + " (S/ " + total + ")", total)));
 
-        montosPorEstado.forEach((estado, monto) -> {
-            PieChart.Data data = new PieChart.Data(estado + " (S/" + String.format("%.2f", monto) + ")", monto);
-            estadoPagoChart.getData().add(data);
-        });
-
-        contenedorGraficosPagos.getChildren().add(estadoPagoChart);
+        contenedorGraficosPagos.getChildren().add(estados);
     }
 
-    private void exportarPdf(VBox contenedor, String tituloReporte) {
+    private void exportarPdf(VBox contenedor, String titulo, LocalDate ini, LocalDate fin) {
         try {
-            String fileName = tituloReporte.replace(" ", "_") + "_" + System.currentTimeMillis() + ".pdf";
-            Document documento = new Document(PageSize.A4.rotate());
-            PdfWriter.getInstance(documento, new FileOutputStream(fileName));
-            documento.open();
+            String home = System.getProperty("user.home");
+            String path = home + File.separator + "Downloads";
+            String fileName = path + File.separator
+                    + titulo.replace(" ", "_") + "_" + System.currentTimeMillis() + ".pdf";
 
-            com.lowagie.text.Font fontTitulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);
-            Paragraph mainTitle = new Paragraph(tituloReporte, fontTitulo);
-            mainTitle.setAlignment(Element.ALIGN_CENTER);
-            documento.add(mainTitle);
-            documento.add(new Paragraph(" "));
+            Document doc = new Document(PageSize.A4.rotate());
+            PdfWriter.getInstance(doc, new FileOutputStream(fileName));
+            doc.open();
+
+            Paragraph title = new Paragraph(titulo, FontFactory.getFont(FontFactory.HELVETICA_BOLD, 20));
+            title.setAlignment(Element.ALIGN_CENTER);
+            doc.add(title);
+
+            Paragraph range = new Paragraph(
+                    "Rango de Fechas: " + ini + "  -  " + fin,
+                    FontFactory.getFont(FontFactory.HELVETICA, 12)
+            );
+            range.setAlignment(Element.ALIGN_CENTER);
+            doc.add(range);
+
+            doc.add(new Paragraph(" "));
 
             for (Node nodo : contenedor.getChildren()) {
+
                 if (nodo instanceof Chart) {
-                    Chart chart = (Chart) nodo;
+                    Chart ch = (Chart) nodo;
 
-                    String chartTitle = chart.getTitle() != null ? chart.getTitle() : "Gráfico Sin Título";
-                    com.lowagie.text.Font fontSub = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14);
-                    Paragraph pTitle = new Paragraph(chartTitle, fontSub);
-                    pTitle.setSpacingBefore(10);
-                    documento.add(pTitle);
+                    String titleChart = ch.getTitle() != null ? ch.getTitle() : "Gráfico";
 
-                    WritableImage image = chart.snapshot(new SnapshotParameters(), null);
-                    BufferedImage bufferedImage = SwingFXUtils.fromFXImage(image, null);
+                    Paragraph subt = new Paragraph(titleChart, FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14));
+                    subt.setAlignment(Element.ALIGN_LEFT);
+                    doc.add(subt);
 
-                    File temp = File.createTempFile("chart_pdf", ".png");
-                    ImageIO.write(bufferedImage, "png", temp);
+                    WritableImage img = ch.snapshot(new SnapshotParameters(), null);
+                    BufferedImage buff = SwingFXUtils.fromFXImage(img, null);
 
-                    Image img = Image.getInstance(temp.getAbsolutePath());
-                    img.scaleToFit(750, 450);
-                    img.setAlignment(Element.ALIGN_CENTER);
+                    File tmp = File.createTempFile("chart", ".png");
+                    ImageIO.write(buff, "png", tmp);
 
-                    documento.add(img);
-                    documento.add(new Paragraph(" "));
+                    Image chartImg = Image.getInstance(tmp.getAbsolutePath());
+                    chartImg.scaleToFit(750, 450);
+                    chartImg.setAlignment(Element.ALIGN_CENTER);
+
+                    doc.add(chartImg);
+                    doc.add(new Paragraph(" "));
                 }
             }
 
-            documento.close();
-            Notification.showNotification("Exportar PDF", "Archivo generado: " + fileName, 4, NotificationType.SUCCESS);
+            doc.close();
+
+            Notification.showNotification("PDF Exportado",
+                    "Guardado en: " + fileName,
+                    4, NotificationType.SUCCESS);
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            Notification.showNotification("Error", "No se pudo exportar el PDF", 4, NotificationType.ERROR);
+            Notification.showNotification("Error", "No se pudo exportar PDF", 4, NotificationType.ERROR);
         }
     }
 }
