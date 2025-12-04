@@ -10,28 +10,37 @@ import org.slf4j.LoggerFactory;
 import pe.edu.utp.sistemaimprenta.model.AuditType;
 import pe.edu.utp.sistemaimprenta.model.User;
 import pe.edu.utp.sistemaimprenta.util.AuditUtil;
+
 public class CustomerDao implements CrudDao<Customer> {
-    
+
     private static final Logger log = LoggerFactory.getLogger(CustomerDao.class);
-    
+
     private Connection getConnection() throws SQLException {
         return DBConnection.getInstance().getConnection();
     }
-    
+
     @Override
     public boolean save(Customer c, User u) {
-        String sql = "INSERT INTO Cliente (dni, apellidos, nombres, telefono, correo_electronico, direccion) " +
-                     "VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
+        String sql = "INSERT INTO Cliente (dni, apellidos, nombres, telefono, correo_electronico, direccion) "
+                + "VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, c.getDni());
             ps.setString(2, c.getLastName());
             ps.setString(3, c.getName());
             ps.setString(4, c.getTelephoneNumber());
             ps.setString(5, c.getEmail());
             ps.setString(6, c.getAddress());
-            
-            AuditUtil.registrar(u, "Creó nuevo cliente: " + c.getName() + " " +c.getLastName(), AuditType.CREACION);
-            return ps.executeUpdate() > 0;
+
+            int filas = ps.executeUpdate();
+            AuditUtil.registrar(u, "Creó nuevo cliente: " + c.getName() + " " + c.getLastName(), AuditType.CREACION);
+
+            if (filas > 0) {
+                ResultSet rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    c.setId(rs.getInt(1)); // id generado
+                }
+            }
+            return filas > 0;
         } catch (SQLException e) {
             log.error("No se pudo guardar cliente en la base de datos", e);
             return false;
@@ -64,11 +73,11 @@ public class CustomerDao implements CrudDao<Customer> {
     }
 
     @Override
-    public boolean delete(int id,User u) {
+    public boolean delete(int id, User u) {
         String sql = "DELETE FROM Cliente WHERE id_cliente=?";
         try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
             ps.setInt(1, id);
-            AuditUtil.registrar(u, "Eliminó cliente CLI-"+ id, AuditType.ELIMINACION);
+            AuditUtil.registrar(u, "Eliminó cliente CLI-" + id, AuditType.ELIMINACION);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             log.error("Error al eliminar cliente por ID", e);
@@ -77,9 +86,9 @@ public class CustomerDao implements CrudDao<Customer> {
     }
 
     @Override
-    public boolean update(Customer c, User u) {  
-        String sql = "UPDATE Cliente SET dni=?, apellidos=?, nombres=?, telefono=?, correo_electronico=?, direccion=? " +
-                     "WHERE id_cliente=?";
+    public boolean update(Customer c, User u) {
+        String sql = "UPDATE Cliente SET dni=?, apellidos=?, nombres=?, telefono=?, correo_electronico=?, direccion=? "
+                + "WHERE id_cliente=?";
         try (PreparedStatement ps = getConnection().prepareStatement(sql)) {
             ps.setString(1, c.getDni());
             ps.setString(2, c.getLastName());
@@ -88,7 +97,7 @@ public class CustomerDao implements CrudDao<Customer> {
             ps.setString(5, c.getEmail());
             ps.setString(6, c.getAddress());
             ps.setInt(7, c.getId());
-            AuditUtil.registrar(u, "Actualizó el usuario CLI-"+c.getId(), AuditType.MODIFICACION);
+            AuditUtil.registrar(u, "Actualizó el usuario CLI-" + c.getId(), AuditType.MODIFICACION);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             log.error("Error al actualizar cliente ", e);
@@ -119,4 +128,3 @@ public class CustomerDao implements CrudDao<Customer> {
         return lista;
     }
 }
-

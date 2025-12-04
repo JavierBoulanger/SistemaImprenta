@@ -166,13 +166,14 @@ public class OrderDao implements CrudDao<Order> {
     @Override
     public Order findById(int id) {
         String sqlPedido = """
-            SELECT p.*, c.id_cliente, c.nombre AS cliente,
-                    u.id_usuario, u.nombre AS usuario
-            FROM Pedido p
-            INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
-            INNER JOIN Usuario u ON p.id_usuario = u.id_usuario
-            WHERE p.id_pedido = ?
-        """;
+        SELECT p.*, 
+               c.id_cliente, c.nombres AS clienteNom, c.apellidos AS clienteAp,
+               u.id_usuario, u.nombre AS usuario
+        FROM Pedido p
+        INNER JOIN Cliente c ON p.id_cliente = c.id_cliente
+        INNER JOIN Usuario u ON p.id_usuario = u.id_usuario
+        WHERE p.id_pedido = ?
+    """;
 
         Connection conn = getConnection();
         try {
@@ -189,7 +190,8 @@ public class OrderDao implements CrudDao<Order> {
 
             Customer c = new Customer();
             c.setId(rs.getInt("id_cliente"));
-            c.setName(rs.getString("cliente"));
+            c.setName(rs.getString("clienteNom"));
+            c.setLastName(rs.getString("clienteAp"));
             o.setCustomer(c);
 
             User u = new User();
@@ -283,7 +285,7 @@ public class OrderDao implements CrudDao<Order> {
         ORDER BY UnidadesVendidas DESC
     """;
 
-        Connection conn = getConnection(); 
+        Connection conn = getConnection();
 
         try (PreparedStatement ps = conn.prepareStatement(query)) {
 

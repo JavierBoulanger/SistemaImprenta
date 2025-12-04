@@ -27,8 +27,7 @@ public class ProductDao implements CrudDao<Product> {
         List<Product> productos = new ArrayList<>();
         String query = "SELECT * FROM Producto";
 
-        try (Statement stmt = getConnection().createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
+        try (Statement stmt = getConnection().createStatement(); ResultSet rs = stmt.executeQuery(query)) {
 
             while (rs.next()) {
                 Product p = new Product();
@@ -50,23 +49,34 @@ public class ProductDao implements CrudDao<Product> {
     @Override
     public boolean save(Product producto, User u) {
         String query = "INSERT INTO Producto (nombre, descripcion, id_tipo_producto, precio_unitario, estado) "
-                     + "VALUES (?, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?)";
 
-        try (PreparedStatement stmt = getConnection().prepareStatement(query)) {
+        try (PreparedStatement stmt = getConnection().prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+
             stmt.setString(1, producto.getName());
             stmt.setString(2, producto.getDescription());
             stmt.setInt(3, producto.getType().getId());
             stmt.setDouble(4, producto.getBasePrice());
             stmt.setBoolean(5, producto.isActive());
 
-            stmt.executeUpdate();
+            int rows = stmt.executeUpdate();
 
-            AuditUtil.registrar(u, "Creó nuevo producto: " + producto.getName(), AuditType.CREACION);
-            return true;
+            if (rows > 0) {
+                try (ResultSet rs = stmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        producto.setId(rs.getInt(1)); 
+                    }
+                }
+
+                AuditUtil.registrar(u, "Creó nuevo producto: " + producto.getName(), AuditType.CREACION);
+                return true;
+            }
+
         } catch (SQLException e) {
             log.error("No se pudo registrar producto en la base de datos", e);
-            return false;
         }
+
+        return false;
     }
 
     @Override
@@ -111,7 +121,7 @@ public class ProductDao implements CrudDao<Product> {
     @Override
     public boolean update(Product producto, User u) {
         String query = "UPDATE Producto SET nombre = ?, descripcion = ?, id_tipo_producto = ?, "
-                     + "precio_unitario = ?, estado = ? WHERE id_producto = ?";
+                + "precio_unitario = ?, estado = ? WHERE id_producto = ?";
 
         try (PreparedStatement stmt = getConnection().prepareStatement(query)) {
             stmt.setString(1, producto.getName());

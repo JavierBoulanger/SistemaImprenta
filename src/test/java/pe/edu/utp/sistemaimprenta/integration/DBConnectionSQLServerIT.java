@@ -1,4 +1,4 @@
-package pe.edu.utp.sistemaimprenta;
+package pe.edu.utp.sistemaimprenta.integration;
 
 import org.junit.jupiter.api.*;
 import java.sql.Connection;
@@ -11,7 +11,7 @@ import pe.edu.utp.sistemaimprenta.db.DBConfig;
 import pe.edu.utp.sistemaimprenta.db.DBConnection;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class DBConnectionSQLServerTest {
+public class DBConnectionSQLServerIT {
 
     private static DBConnection dbConnection;
 
