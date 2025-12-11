@@ -1,0 +1,293 @@
+[08-12-2025 16:00:41] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[08-12-2025 16:00:43] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:04:10] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:05:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:06:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:06:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:06:51] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:06:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:07:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:09:44] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:09:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:09:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:09:44] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:09:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:09:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:09:44] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:09:53] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:09:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:09:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:09:53] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:09:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:09:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:09:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:09:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:09:54] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:09:55] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:09:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:09:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:09:55] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:09:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:09:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:09:55] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:09:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:10:06] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:10:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:06] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:10:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:10:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:10:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:10:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:18] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:10:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:18] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:10:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:10:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:10:18] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:10:20] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 2 pagos con estado PAGADO
+[08-12-2025 16:10:21] [INFO] [p.e.u.s.controller.PaymentController] Filtrados 3 pagos con estado PENDIENTE
+[08-12-2025 16:10:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:27] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:10:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:27] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:10:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:10:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:10:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:10:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:37] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:10:37] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:10:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:10:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:10:56] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:11:37] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:11:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:11:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:11:37] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:11:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:11:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:11:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:11:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:11:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:14:00] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[08-12-2025 16:14:54] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[08-12-2025 16:16:13] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: Jorge Castro]
+[08-12-2025 16:16:29] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Actualizó el usuario CLI-13]
+[08-12-2025 16:16:36] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó cliente CLI-16]
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:17:08] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:17:11] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:17:33] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:17:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:17:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:17:33] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:17:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:17:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:17:33] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:17:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:17:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:17:40] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:17:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:18:53] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:19:05] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:19:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:19:05] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:19:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:19:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:19:05] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:19:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:07] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:19:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:12] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:19:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:27] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1: S/ 240.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 75.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3: S/ 200.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4: S/ 0.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 5: S/ 57.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 6: S/ 250.0
+[08-12-2025 16:19:41] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 7: S/ 0.0
+[08-12-2025 16:19:42] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[08-12-2025 16:19:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5
+[08-12-2025 16:19:42] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 5
+[08-12-2025 16:19:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 0.0
+[08-12-2025 16:19:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 2
+[08-12-2025 16:19:42] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 2
+[08-12-2025 16:19:43] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[08-12-2025 16:19:43] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 5

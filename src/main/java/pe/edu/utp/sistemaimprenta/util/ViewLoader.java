@@ -7,6 +7,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.io.InputStream;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import org.slf4j.Logger;
@@ -18,6 +19,28 @@ public class ViewLoader {
     private static final Logger log = LoggerFactory.getLogger(ViewLoader.class);
 
     private ViewLoader() {
+    }
+
+    private static Image loadImage(String path) {
+        if (path == null || path.isEmpty()) return null;
+
+        try {
+            if (path.startsWith("file:")) {
+                return new Image(path);
+            } 
+            else {
+                String internalPath = path.startsWith("/") ? path : "/" + path;
+                InputStream stream = ViewLoader.class.getResourceAsStream(internalPath);
+                if (stream != null) {
+                    return new Image(stream);
+                } else {
+                    log.warn("No se encontró la imagen interna: " + internalPath);
+                }
+            }
+        } catch (Exception e) {
+            log.error("Error al cargar imagen: " + path, e);
+        }
+        return null;
     }
 
     private static FXMLLoader createFXMLLoader(String fxmlPath) throws IOException {
@@ -34,11 +57,19 @@ public class ViewLoader {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
-            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/icons/dashboard/logo.png")));
+            
+            String logoPath = ConfigUtil.get("img.logo");
+            if (logoPath == null) logoPath = "/images/icons/dashboard/logo.png";
+            
+            Image icon = loadImage(logoPath);
+            if (icon != null) {
+                stage.getIcons().add(icon);
+            }
+            
             stage.setResizable(resizable);
             stage.show();
         } catch (IOException e) {
-            log.error(String.format("No se pudó abrir el fxml \"%s\"", fxmlPath), e);
+            log.error(String.format("No se pudo abrir el fxml \"%s\"", fxmlPath), e);
         }
     }
 
@@ -59,7 +90,15 @@ public class ViewLoader {
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle(title);
-            stage.getIcons().add(new Image(ViewLoader.class.getResourceAsStream("/images/icons/dashboard/logo.png")));
+            
+            String logoPath = ConfigUtil.get("img.logo");
+            if (logoPath == null) logoPath = "/images/icons/dashboard/logo.png";
+            
+            Image icon = loadImage(logoPath);
+            if (icon != null) {
+                stage.getIcons().add(icon);
+            }
+
             stage.setResizable(resizable);
             stage.show();
             return loader.getController();
@@ -79,12 +118,18 @@ public class ViewLoader {
             HBox sidebarItem = loader.load();
             SidebarItemController controller = loader.getController();
             controller.setLabelText(text);
-            controller.setIconImage(new Image(ViewLoader.class.getResourceAsStream(iconPath)));
-          
+            
+            Image icon = loadImage(iconPath);
+            if (icon != null) {
+                controller.setIconImage(icon);
+            } else {
+                log.warn("Icono no cargado para sidebar item: " + text);
+            }
+            
             controller.lightenIcon();
             return new SidebarItemResult(sidebarItem, controller);
         } catch (Exception e) {
-            log.error("No se pudó cargar la barra lateral", e);
+            log.error("No se pudo cargar la barra lateral", e);
             return null;
         }
     }
@@ -100,5 +145,4 @@ public class ViewLoader {
             return null;
         }
     }
-
 }

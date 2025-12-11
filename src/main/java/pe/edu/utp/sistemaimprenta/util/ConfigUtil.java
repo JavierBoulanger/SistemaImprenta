@@ -6,19 +6,35 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ConfigUtil {
-    private static final String CONFIG_PATH = "/config/config.properties";
+    private static final String CONFIG_FILE_NAME = "config.properties"; 
     private static final Properties properties = new Properties();
     private static final Logger log = LoggerFactory.getLogger(ConfigUtil.class);
-    
+
     static {
-        try (InputStream input = ConfigUtil.class.getResourceAsStream(CONFIG_PATH)) {
-            if (input != null) {
+        loadConfig();
+    }
+
+    private static void loadConfig() {
+        File externalFile = new File(CONFIG_FILE_NAME);
+        if (externalFile.exists()) {
+            try (InputStream input = new FileInputStream(externalFile)) {
                 properties.load(input);
-            } else {
-                System.err.println("No se encontró config.properties");
+                log.info("Configuración cargada desde archivo externo.");
+            } catch (IOException e) {
+                log.error("Error cargando config externa", e);
             }
-        } catch (IOException e) {
-            log.error("Error al cargar configuración del sistema",e);
+        } else {
+       
+            log.warn("No se encontró config.properties externo. Usando valores internos por defecto.");
+            try (InputStream input = ConfigUtil.class.getResourceAsStream("/config/config.properties")) {
+                if (input != null) {
+                    properties.load(input);
+                  
+                    save(); 
+                }
+            } catch (IOException e) {
+                log.error("Error cargando configuración interna", e);
+            }
         }
     }
 
@@ -31,10 +47,11 @@ public class ConfigUtil {
     }
 
     public static void save() {
-        try (OutputStream output = new FileOutputStream("src/main/resources/config/config.properties")) {
+       
+        try (OutputStream output = new FileOutputStream(CONFIG_FILE_NAME)) {
             properties.store(output, "Configuración del sistema");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Error guardando configuración", e);
         }
     }
 

@@ -1,0 +1,260 @@
+[07-12-2025 11:23:05] [ERROR] [p.e.u.s.db.DBConnection] No se pudo establecer conexion con la base de datos
+com.microsoft.sqlserver.jdbc.SQLServerException: No se pudo realizar la conexión TCP/IP al host BOULANGER, puerto 1433. Error: "Connection refused: getsockopt. Verifique las propiedades de conexión, compruebe que hay una instancia de SQL Server ejecutándose en el host y aceptando las conexiones TCP/IP en el puerto y compruebe que no hay ningún firewall bloqueando las conexiones TCP en el puerto.".
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:248)
+	at com.microsoft.sqlserver.jdbc.SQLServerException.convertConnectExceptionToSQLServerException(SQLServerException.java:314)
+	at com.microsoft.sqlserver.jdbc.SocketFinder.findSocket(IOBuffer.java:2593)
+	at com.microsoft.sqlserver.jdbc.TDSChannel.open(IOBuffer.java:721)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4073)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3690)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3499)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2207)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1320)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at pe.edu.utp.sistemaimprenta.db.DBConnection.<init>(DBConnection.java:21)
+	at pe.edu.utp.sistemaimprenta.db.DBConnection.getInstance(DBConnection.java:31)
+	at pe.edu.utp.sistemaimprenta.integration.DBConnectionSQLServerIT.init(DBConnectionSQLServerIT.java:20)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeAllMethod(TimeoutExtension.java:70)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllMethods$13(ClassBasedTestDescriptor.java:412)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllMethods(ClassBasedTestDescriptor.java:410)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:216)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[07-12-2025 11:24:16] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:28:08] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:28:09] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-4006]
+[07-12-2025 11:29:13] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:29:13] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: Cliente Prueba]
+[07-12-2025 11:29:13] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Actualizó el usuario CLI-2008]
+[07-12-2025 11:29:13] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Eliminó cliente CLI-2008]
+[07-12-2025 11:41:09] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:41:09] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[07-12-2025 11:42:41] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:42:41] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[07-12-2025 11:51:03] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[07-12-2025 11:51:07] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[07-12-2025 11:51:13] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[07-12-2025 11:51:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[07-12-2025 11:51:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 7
+[07-12-2025 11:51:13] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 7
+[07-12-2025 11:51:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 316.5
+[07-12-2025 11:51:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 5
+[07-12-2025 11:51:13] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 6
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3006: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3007: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3008: S/ 120.5
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3009: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:16] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:17] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se desconectó del sistema]
+[07-12-2025 11:51:21] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3006: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3007: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3008: S/ 120.5
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3009: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:23] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:35] [INFO] [p.e.u.s.controller.PaymentController] Inicializando PaymentController con datos desde la base de datos...
+[07-12-2025 11:51:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Ejecutando consulta listarPagos...
+[07-12-2025 11:51:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos listados correctamente: 7
+[07-12-2025 11:51:35] [INFO] [p.e.u.s.controller.PaymentController] Pagos cargados desde BD: 7
+[07-12-2025 11:51:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total ingresos del mes: S/ 316.5
+[07-12-2025 11:51:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pendientes (reales): 5
+[07-12-2025 11:51:35] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Pagos con estado Pagado: 6
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3006: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3007: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3008: S/ 120.5
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3009: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:36] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:51:37] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:51:39] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:52:06] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:52:26] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:00] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Creó nuevo cliente: Andre Agurto]
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2: S/ 120.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 1005: S/ 180.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2006: S/ 30.0
+[07-12-2025 11:53:02] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2007: S/ 90.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3006: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3007: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3008: S/ 120.5
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3009: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:03] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Registró el pedido PED-4007]
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 3010: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4006: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:17] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 2005: S/ 90.0
+[07-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0
+[07-12-2025 11:53:19] [INFO] [p.e.u.sistemaimprenta.dao.PaymentDao] Total pagado del pedido 4007: S/ 0.0

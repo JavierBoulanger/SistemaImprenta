@@ -53,7 +53,40 @@ public class DashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setImage(imgLogo, ConfigUtil.get("img.logo"));
         setImage(imgUser, "/images/DefaultProfileUser.png");
+        
         itemLogOut.setOnAction(this::logOut);
+    }
+
+ 
+    private void setImage(ImageView imageView, String resourcePath) {
+        if (imageView == null || resourcePath == null || resourcePath.isEmpty()) {
+            return;
+        }
+
+        try {
+            Image image = null;
+
+            if (resourcePath.startsWith("file:")) {
+                image = new Image(resourcePath);
+            } 
+
+            else {
+                String path = resourcePath.startsWith("/") ? resourcePath : "/" + resourcePath;
+                var stream = getClass().getResourceAsStream(path);
+                if (stream != null) {
+                    image = new Image(stream);
+                } else {
+                    System.err.println("Recurso no encontrado (interno): " + path);
+                }
+            }
+            if (image != null && !image.isError()) {
+                imageView.setImage(image);
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error al cargar imagen en Dashboard: " + resourcePath);
+            e.printStackTrace();
+        }
     }
 
     private void crearItemsVendedor() {
@@ -77,11 +110,7 @@ public class DashboardController implements Initializable {
         createSidebarItem("Configuracion", ConfigUtil.get("img.configuration"), FxmlPath.CONFIG_PANE.getPath());
         createSidebarItem("Pagos", ConfigUtil.get("img.payments"), FxmlPath.PAYMENT_PANE.getPath());
         createSidebarItem("Reportes", ConfigUtil.get("img.reports"), FxmlPath.REPORT_PANE.getPath());
-    }
-
-    private void setImage(ImageView imageView, String resourcePath) {
-        Image image = new Image(getClass().getResourceAsStream(resourcePath));
-        imageView.setImage(image);
+        createSidebarItem("Monitoreo", ConfigUtil.get("img.health"), FxmlPath.HEALTH_PANE.getPath());
     }
 
     public void setUser(User user) {
@@ -89,6 +118,8 @@ public class DashboardController implements Initializable {
             this.user = user;
             labelUsername.setText(user.getUsername());
             labelTypeUser.setText(getUserTypeCentralized());
+            
+            sideBar.getChildren().clear();
 
             switch (user.getType()) {
                 case UserType.VENDEDOR ->
@@ -105,7 +136,7 @@ public class DashboardController implements Initializable {
         return user.getType().name().toLowerCase().toUpperCase();
     }
 
-    private void createSidebarItem(String i18nKey, String iconPath, String fxmlToLoad) {
+    private void createSidebarItem(String i18nKey, String iconPath, String fxmlToLoad) {  
         SidebarItemResult result = ViewLoader.loadSidebarItem(i18nKey, iconPath);
         if (result == null) {
             return;
@@ -127,11 +158,12 @@ public class DashboardController implements Initializable {
 
         sidebarItem.getStyleClass().add("menu-item");
         sideBar.getChildren().add(sidebarItem);
-
     }
 
     private void logOut(ActionEvent event) {
-        AuditUtil.registrar(getUser(), "Se desconectó del sistema", AuditType.LOGOUT);
+        if (getUser() != null) {
+             AuditUtil.registrar(getUser(), "Se desconectó del sistema", AuditType.LOGOUT);
+        }
         closeCurrentStage();
         ViewLoader.openWindow(FxmlPath.AUTH.getPath(), "Login", false);
     }

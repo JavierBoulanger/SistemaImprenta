@@ -1,7 +1,8 @@
-package pe.edu.utp.sistemaimprenta.controller;
+package pe.edu.utp.sistemaimprenta.unit;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import pe.edu.utp.sistemaimprenta.controller.RegisterController;
 
 public class RegisterControllerTest {
 

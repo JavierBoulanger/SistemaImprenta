@@ -1,0 +1,9 @@
+[09-12-2025 19:41:29] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[09-12-2025 19:41:30] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[09-12-2025 19:41:30] [WARN] [p.e.u.s.util.ConfigUtil] No se encontró config.properties externo. Usando valores internos por defecto.
+[09-12-2025 19:57:18] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[09-12-2025 19:57:18] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]
+[09-12-2025 19:57:18] [INFO] [p.e.u.s.util.ConfigUtil] Configuración cargada desde archivo externo.
+[09-12-2025 20:12:56] [INFO] [p.e.u.s.util.ConfigUtil] Configuración cargada desde archivo externo.
+[09-12-2025 20:13:01] [INFO] [p.e.u.s.db.DBConnection] Se ha establecido conexión con la base de datos
+[09-12-2025 20:13:01] [INFO] [p.e.utp.sistemaimprenta.dao.AuditDao] Auditoría registrada [Se conectó al sistema]

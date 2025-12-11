@@ -42,10 +42,16 @@ public class ConfigController implements Initializable {
         txtDireccion.setText(ConfigUtil.get("empresa.direccion"));
     }
 
-    private void loadImageSelectors() {
-        String dashboardIconsPath = "src/main/resources/images/icons/dashboard";
-        File folder = new File(dashboardIconsPath);
+   private void loadImageSelectors() {
+        String pathProduccion = "images/icons/dashboard";
+        File folder = new File(pathProduccion);
+
         if (!folder.exists()) {
+             folder = new File("src/main/resources/images/icons/dashboard");
+        }
+
+        if (!folder.exists()) {
+            System.err.println("Carpeta no encontrada: " + folder.getAbsolutePath());
             return;
         }
 
@@ -55,10 +61,12 @@ public class ConfigController implements Initializable {
                 Map.entry("img.configuration", "Ícono Configuración"),
                 Map.entry("img.customers", "Ícono Clientes"),
                 Map.entry("img.users", "Ícono Usuarios"),
-                        Map.entry("img.orders", "Ícono Pedidos"),
-                        Map.entry("img.products", "Ícono Productos"),
+                Map.entry("img.orders", "Ícono Pedidos"),
+                Map.entry("img.products", "Ícono Productos"),
                 Map.entry("img.reports", "Ícono Reportes"),
-                Map.entry("img.payments", "Ícono Pagos")
+                Map.entry("img.payments", "Ícono Pagos"),
+                Map.entry("img.health", "Ícono Rendimiento")
+                
         );
 
         List<String> images = listImages(folder);
@@ -69,17 +77,52 @@ public class ConfigController implements Initializable {
             String currentValue = ConfigUtil.get(key);
 
             ComboBox<String> comboBox = new ComboBox<>();
-            comboBox.setPrefWidth(500);
+            comboBox.setPrefWidth(350);
             comboBox.getItems().addAll(images);
 
+            String selectedImage = null;
+
+            
             if (currentValue != null && images.contains(currentValue)) {
-                comboBox.setValue(currentValue);
+                selectedImage = currentValue;
+            } 
+            
+            else if (currentValue != null) {
+                
+                String fileNameSaved = new File(currentValue).getName(); 
+                
+                for (String imgOption : images) {
+                    String fileNameOption = new File(imgOption).getName();
+                    
+                    if (fileNameOption.equalsIgnoreCase(fileNameSaved)) {
+                        selectedImage = imgOption;
+                        break; 
+                    }
+                }
+            }
+            
+            if (selectedImage == null) {
+                
+                String keyword = key.replace("img.", "");
+                for (String img : images) {
+                    if (img.toLowerCase().contains(keyword)) {
+                        selectedImage = img;
+                        break;
+                    }
+                }
+            }
+
+
+            if (selectedImage != null) {
+                comboBox.setValue(selectedImage);
             } else if (!images.isEmpty()) {
                 comboBox.setValue(images.get(0));
             }
+ 
 
             Label lbl = new Label(label);
-            HBox row = new HBox(20, lbl, comboBox);
+            lbl.setPrefWidth(150);
+            HBox row = new HBox(10, lbl, comboBox);
             vboxImagenes.getChildren().add(row);
 
             imageSelectors.put(key, comboBox);
@@ -88,11 +131,16 @@ public class ConfigController implements Initializable {
 
     private List<String> listImages(File folder) {
         List<String> images = new ArrayList<>();
-        for (File file : Objects.requireNonNull(folder.listFiles())) {
-            if (file.isFile() && file.getName().matches(".*\\.(png|jpg|jpeg|gif)$")) {
-                images.add("/images/icons/dashboard/" + file.getName());
+        File[] files = folder.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && file.getName().matches(".*\\.(png|jpg|jpeg|gif)$")) {
+                    images.add("file:images/icons/dashboard/" + file.getName());
+                }
             }
         }
+        Collections.sort(images);
         return images;
     }
 
